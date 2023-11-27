@@ -1,6 +1,7 @@
 {
   "entries": [
     {
+      "id": "floods-precipitation-anomaly",
       "title": "Flood precipitation anomaly",
       "description": "A _great_ flood precipitation anomaly.",
       "source": "./use-cases/floods-precipitation-anomaly.ipynb",
