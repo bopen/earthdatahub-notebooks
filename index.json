@@ -6,7 +6,9 @@
       "description": "A _great_ flood precipitation anomaly.",
       "source": "./use-cases/floods-precipitation-anomaly.ipynb",
       "export": "./use-cases/floods-precipitation-anomaly.html",
-      "thumbnail_url": "./use-cases/floods-precipitation-anomaly.jpg"
+      "thumbnail_url": "./use-cases/floods-precipitation-anomaly.jpg",
+      "collection": "cmems-reanalysis",
+      "dataset": "cmems_mod_glo_phy_my_0.083_P1D-m"
     }
   ]
 }
