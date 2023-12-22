@@ -1,11 +1,14 @@
 {
   "entries": [
     {
-      "id": "floods-precipitation-anomaly",
-      "title": "Flood precipitation anomaly",
-      "description": "A _great_ flood precipitation anomaly.",
-      "source": "./use-cases/floods-precipitation-anomaly.ipynb",
-      "export": "./use-cases/floods-precipitation-anomaly.html"
+      "id": "cmems",
+      "title": "El Nino events exploration",
+      "description": "An exploration of El Nino events using CMEMS data",
+      "source": "./use-cases/cmems.ipynb",
+      "export": "./use-cases/cmems.html",
+      "thumbnail_url": "./use-cases/cmems.jpg",
+      "collection": "cmems-reanalysis",
+      "dataset": "cmems_mod_glo_phy_my_0.083_P1D-m"
     }
   ]
 }
