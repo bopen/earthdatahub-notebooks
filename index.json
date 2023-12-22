@@ -1,6 +1,16 @@
 {
   "entries": [
     {
+      "id": "floods-precipitation-anomaly",
+      "title": "Flood precipitation anomaly",
+      "description": "A _great_ flood precipitation anomaly.",
+      "source": "./use-cases/floods-precipitation-anomaly.ipynb",
+      "export": "./use-cases/floods-precipitation-anomaly.html",
+      "thumbnail_url": "./use-cases/floods-precipitation-anomaly.jpg",
+      "collection": "era5",
+      "dataset": "reanalysis-era5-land"
+    },
+    {
       "id": "cmems",
       "title": "El Nino events exploration",
       "description": "An exploration of El Nino events using CMEMS data",
@@ -39,6 +49,116 @@
       "thumbnail_url": "./use-cases/reanalysis-era5-single-levels.jpg",
       "collection": "era5",
       "dataset": "reanalysis-era5-single-levels"      
+    },
+    {
+      "id": "eurostats_animal-populations",
+      "title": "EUROSTAT animal populations",
+      "description": "Europe EUROSTAT Animal populations by NUTS 2 regions.",
+      "source": "./use-cases/eurostats_animal-populations.ipynb",
+      "export": "./use-cases/eurostats_animal-populations.html",
+      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/agr_r_animal-19770101-20230101.png",
+      "collection": "eurostat",
+      "dataset": "geoprocessed-eurostat-animal-populations-agr_r_animal"
+    },
+    {
+      "id": "eurostats_final-energy-consumption",
+      "title": "EUROSTAT final energy consumption",
+      "description": "EUROSTAT Final Consumption of Energy data over Europe.",
+      "source": "./use-cases/eurostats_final-energy-consumption.ipynb",
+      "export": "./use-cases/eurostats_final-energy-consumption.html",
+      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/sdg_07_11-20000101-20210101.png",
+      "collection": "eurostat",
+      "dataset": "geoprocessed-eurostat-final-energy-consumption_sdg_07_11"
+    },
+    {
+      "id": "eurostats_CDD-and-HDD-data",
+      "title": "EUROSTAT CDD & HDD",
+      "description": "Eurostat CDD & HDD data over Europe.",
+      "source": "./use-cases/eurostats_CDD-and-HDD-data.ipynb",
+      "export": "./use-cases/eurostats_CDD-and-HDD-data.html",
+      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/nrg_chddr2_a-19790101-20220101.png",
+      "collection": "eurostat",
+      "dataset": "geoprocessed-eurostat-final-energy-consumption_sdg_07_11"
+    },
+    {
+      "id": "eurostats_labour-market-employment-rates",
+      "title": "EUROSTAT labour market employment rates",
+      "description": "Eurostat Regional Labour Market Employment Rates.",
+      "source": "./use-cases/eurostats_labour-market-employment-rates.ipynb",
+      "export": "./use-cases/eurostats_labour-market-employment-rates.html",
+      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/lfst_r_erednu-19950101-20220101.png",
+      "collection": "eurostat",
+      "dataset": "geoprocessed-eurostat-employment-rates_lfst_r_erednu"
+    },
+    {
+      "id": "eurostats_government-deficit-and-debt",
+      "title": "EUROSTAT Government deficit and debt",
+      "description": "Europe EUROSTAT Government deficit and debt.",
+      "source": "./use-cases/eurostats_government-deficit-and-debt.ipynb",
+      "export": "./use-cases/eurostats_government-deficit-and-debt.html",
+      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/gov_10dd_edpt1-19950101-20220101.png",
+      "collection": "eurostat",
+      "dataset": "geoprocessed-eurostat-government-deficit-surplus-gov_10dd_edpt1"
+    },
+    {
+      "id": "eurostats_gerd",
+      "title": "EUROSTAT GERD",
+      "description": "Europe EUROSTAT GERD.",
+      "source": "./use-cases/eurostats_gerd.ipynb",
+      "export": "./use-cases/eurostats_gerd.html",
+      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/rd_e_gerdreg-19800101-20220101.png",
+      "collection": "eurostat",
+      "dataset": "geoprocessed-eurostat-gross-domestic-expenditure-R-D-rd_e_gerdreg"
+    },
+    {
+      "id": "eurostats_mortality",
+      "title": "EUROSTAT mortality",
+      "description": "Eurostat mortality data over Europe.",
+      "source": "./use-cases/eurostats_mortality.ipynb",
+      "export": "./use-cases/eurostats_mortality.html",
+      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/demo_r_mweek3-20000103-20231030.png",
+      "collection": "eurostat",
+      "dataset": "geoprocessed-eurostat-mortality-demo_r_mweek3"
+    },
+    {
+      "id": "eurostats_population",
+      "title": "EUROSTAT population",
+      "description": "Eurostat population data over Europe.",
+      "source": "./use-cases/eurostats_population.ipynb",
+      "export": "./use-cases/eurostats_population.html",
+      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/demo_r_pjanaggr3-19900101-20220101.png",
+      "collection": "eurostat",
+      "dataset": "geoprocessed-eurostat-population-demo_r_pjanaggr3"
+    },
+    {
+      "id": "eurostats_population-density",
+      "title": "EUROSTAT population density",
+      "description": "Eurostat population density data over Europe.",
+      "source": "./use-cases/eurostats_population-density.ipynb",
+      "export": "./use-cases/eurostats_population-density.html",
+      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/demo_r_d3dens-19900101-20220101.png",
+      "collection": "eurostat",
+      "dataset": "geoprocessed-eurostat-population-density-demo_r_d3dens"
+    },
+    {
+      "id": "eurostats_gross-domestic-product",
+      "title": "EUROSTAT Gross domestic product",
+      "description": "Europe Gross domestic product (GDP).",
+      "source": "./use-cases/eurostats_gross-domestic-product.ipynb",
+      "export": "./use-cases/eurostats_gross-domestic-product.html",
+      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/nama_10r_3gdp-20000101-20210101.png",
+      "collection": "eurostat",
+      "dataset": "geoprocessed-eurostat-regional-economic-accounts_nama_10r_3gdp"
+    },
+    {
+      "id": "eurostats_soil-erosion",
+      "title": "EUROSTAT soil erosion",
+      "description": "Europe EUROSTAT soil erosion.",
+      "source": "./use-cases/eurostats_soil-erosion.ipynb",
+      "export": "./use-cases/eurostats_soil-erosion.html",
+      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/aei_pr_soiler-20000101-20160101.png",
+      "collection": "eurostat",
+      "dataset": "geoprocessed-eurostat-soil-erosion-aei_pr_soiler"
     }
   ]
 }
