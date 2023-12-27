@@ -14,9 +14,7 @@ def map(data, location=None, vmax=VMAX, projection=PROJECTION, cmap=CMAP, ax=Non
     if ax is None:
         _, ax = plt.subplots(subplot_kw={"projection": projection})
 
-    data_mm = data * 1000
-    data_mm.attrs["units"] = "mm"
-    data_mm.plot(ax=ax, cmap=cmap, vmax=vmax, transform=crs.PlateCarree())
+    data.plot(ax=ax, cmap=cmap, vmax=vmax, transform=crs.PlateCarree())
 
     if location is not None:
         ax.plot(

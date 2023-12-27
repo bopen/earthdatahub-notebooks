@@ -7,8 +7,48 @@
       "source": "./use-cases/floods-precipitation-anomaly.ipynb",
       "export": "./use-cases/floods-precipitation-anomaly.html",
       "thumbnail_url": "./use-cases/floods-precipitation-anomaly.jpg",
+      "collection": "era5",
+      "dataset": "reanalysis-era5-land"
+    },
+    {
+      "id": "cmems",
+      "title": "El Nino events exploration",
+      "description": "An exploration of El Nino events using CMEMS data",
+      "source": "./use-cases/cmems.ipynb",
+      "export": "./use-cases/cmems.html",
+      "thumbnail_url": "./use-cases/cmems.jpg",
       "collection": "cmems-reanalysis",
       "dataset": "cmems_mod_glo_phy_my_0.083_P1D-m"
+    },
+    {
+      "id": "ecmwf-high-resolution-forecasts",
+      "title": "Surface temperature forecasts",
+      "description": "An exploration of surface temperature high-resolution forecasts",
+      "source": "./use-cases/ecmwf-high-resolution-forecasts.ipynb",
+      "export": "./use-cases/ecmwf-high-resolution-forecasts.html",
+      "thumbnail_url": "./use-cases/ecmwf-high-resolution-forecasts.jpg",
+      "collection": "ecmwf-forecasts",
+      "dataset": "opendata-oper"      
+    },
+    {
+      "id": "ecv",
+      "title": "Surface temperature anomalies in Winter",
+      "description": "An exploration of surface temperature variability using ERA5-derived data",
+      "source": "./use-cases/ecv.ipynb",
+      "export": "./use-cases/ecv.html",
+      "thumbnail_url": "./use-cases/ecv.jpg",
+      "collection": "era5",
+      "dataset": "ecv-for-climate-change"      
+    },
+    {
+      "id": "reanalysis-era5-single-levels",
+      "title": "Surface temperature data exploration",
+      "description": "An exploration of surface temperature ERA5 data",
+      "source": "./use-cases/reanalysis-era5-single-levels.ipynb",
+      "export": "./use-cases/reanalysis-era5-single-levels.html",
+      "thumbnail_url": "./use-cases/reanalysis-era5-single-levels.jpg",
+      "collection": "era5",
+      "dataset": "reanalysis-era5-single-levels"      
     },
     {
       "id": "eurostats_animal-populations",
