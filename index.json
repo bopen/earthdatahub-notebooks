@@ -11,6 +11,16 @@
       "dataset": "reanalysis-era5-land"
     },
     {
+      "id": "tutorial-era5-reanalysis-era5-single-levels",
+      "title": "Surface temperature data exploration",
+      "description": "This notebook will provide you guidance on how to access and use the reanalysis-era5-single-levels.zarr datset on Earth Data Hub. The first goal is to compute the 2 metre temperature anomaly for the month of October 2023, in the Germany area, against the 1981-2010 reference period. The second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the same reference period and compare it with the monthly averages of 2023.",
+      "source": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.ipynb",
+      "export": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.html",
+      "thumbnail_url": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.jpg",
+      "collection": "era5",
+      "dataset": "reanalysis-era5-single-levels"
+    },
+    {
       "id": "tutorial-cmems-reanalysis-cmems_mod_glo_phy_my_0.083_P1D-m",
       "title": "El Nino events exploration",
       "description": "An exploration of El Nino events using CMEMS data",
@@ -28,7 +38,7 @@
       "export": "./use-cases/tutorial-ecmwf-forecasts-opendata-oper.html",
       "thumbnail_url": "./use-cases/tutorial-ecmwf-forecasts-opendata-oper.jpg",
       "collection": "ecmwf-forecasts",
-      "dataset": "opendata-oper"      
+      "dataset": "opendata-oper"
     },
     {
       "id": "tutorial-era5-ecv-for-climate-change",
@@ -38,17 +48,7 @@
       "export": "./use-cases/tutorial-era5-ecv-for-climate-change.html",
       "thumbnail_url": "./use-cases/tutorial-era5-ecv-for-climate-change.jpg",
       "collection": "era5",
-      "dataset": "ecv-for-climate-change"      
-    },
-    {
-      "id": "tutorial-era5-reanalysis-era5-single-levels",
-      "title": "Surface temperature data exploration",
-      "description": "This notebook will provide you guidance on how to access and use the reanalysis-era5-single-levels.zarr datset on Earth Data Hub. The first goal is to compute the 2 metre temperature anomaly for the month of October 2023, in the Germany area, against the 1981-2010 reference period. The second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the same reference period and compare it with the monthly averages of 2023.",
-      "source": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.ipynb",
-      "export": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.html",
-      "thumbnail_url": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.jpg",
-      "collection": "era5",
-      "dataset": "reanalysis-era5-single-levels"      
+      "dataset": "ecv-for-climate-change"
     },
     {
       "id": "eurostats_animal-populations",
