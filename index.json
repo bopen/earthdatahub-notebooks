@@ -51,16 +51,6 @@
       "dataset": "ecv-for-climate-change"
     },
     {
-      "id": "eurostats_animal-populations",
-      "title": "EUROSTAT animal populations",
-      "description": "Europe EUROSTAT Animal populations by NUTS 2 regions.",
-      "source": "./use-cases/eurostats_animal-populations.ipynb",
-      "export": "./use-cases/eurostats_animal-populations.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/agr_r_animal-19770101-20230101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-animal-populations-agr_r_animal"
-    },
-    {
       "id": "eurostats_final-energy-consumption",
       "title": "EUROSTAT final energy consumption",
       "description": "EUROSTAT Final Consumption of Energy data over Europe.",
@@ -79,46 +69,6 @@
       "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/nrg_chddr2_a-19790101-20220101.png",
       "collection": "eurostat",
       "dataset": "geoprocessed-eurostat-final-energy-consumption_sdg_07_11"
-    },
-    {
-      "id": "eurostats_labour-market-employment-rates",
-      "title": "EUROSTAT labour market employment rates",
-      "description": "Eurostat Regional Labour Market Employment Rates.",
-      "source": "./use-cases/eurostats_labour-market-employment-rates.ipynb",
-      "export": "./use-cases/eurostats_labour-market-employment-rates.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/lfst_r_erednu-19950101-20220101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-employment-rates_lfst_r_erednu"
-    },
-    {
-      "id": "eurostats_government-deficit-and-debt",
-      "title": "EUROSTAT Government deficit and debt",
-      "description": "Europe EUROSTAT Government deficit and debt.",
-      "source": "./use-cases/eurostats_government-deficit-and-debt.ipynb",
-      "export": "./use-cases/eurostats_government-deficit-and-debt.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/gov_10dd_edpt1-19950101-20220101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-government-deficit-surplus-gov_10dd_edpt1"
-    },
-    {
-      "id": "eurostats_gerd",
-      "title": "EUROSTAT GERD",
-      "description": "Europe EUROSTAT GERD.",
-      "source": "./use-cases/eurostats_gerd.ipynb",
-      "export": "./use-cases/eurostats_gerd.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/rd_e_gerdreg-19800101-20220101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-gross-domestic-expenditure-R-D-rd_e_gerdreg"
-    },
-    {
-      "id": "eurostats_mortality",
-      "title": "EUROSTAT mortality",
-      "description": "Eurostat mortality data over Europe.",
-      "source": "./use-cases/eurostats_mortality.ipynb",
-      "export": "./use-cases/eurostats_mortality.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/demo_r_mweek3-20000103-20231030.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-mortality-demo_r_mweek3"
     },
     {
       "id": "eurostats_population",
