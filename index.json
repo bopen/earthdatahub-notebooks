@@ -3,7 +3,7 @@
     {
       "id": "floods-precipitation-anomaly",
       "title": "Flood precipitation anomaly",
-      "description": "A _great_ flood precipitation anomaly.",
+      "description": "This notebook will provide you guidance on how to access and use the `reanalysis-era5-land-no-antartica-v0.zarr` datset on Earth Data Hub. The first goal is to compute the total precipitation observed during the Storm Daniel event, from 6 to 7 September 2023, in Greece, and compare it with the average 1991-2020 precipitation in the same area. The second goal is to compare the 2023 cumulative precipitation on a specific location (Greece interland) with the cumulative precipitation of past years (1991-2022) for the same location.",
       "source": "./use-cases/floods-precipitation-anomaly.ipynb",
       "export": "./use-cases/floods-precipitation-anomaly.html",
       "thumbnail_url": "./use-cases/floods-precipitation-anomaly.jpg",
@@ -43,7 +43,7 @@
     {
       "id": "tutorial-era5-reanalysis-era5-single-levels",
       "title": "Surface temperature data exploration",
-      "description": "An exploration of surface temperature ERA5 data",
+      "description": "This notebook will provide you guidance on how to access and use the reanalysis-era5-single-levels.zarr datset on Earth Data Hub. The first goal is to compute the 2 metre temperature anomaly for the month of October 2023, in the Germany area, against the 1981-2010 reference period. The second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the same reference period and compare it with the monthly averages of 2023.",
       "source": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.ipynb",
       "export": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.html",
       "thumbnail_url": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.jpg",
