@@ -2,7 +2,7 @@
   "entries": [
     {
       "id": "floods-precipitation-anomaly",
-      "title": "Flood precipitation anomaly",
+      "title": "How to work with ERA5 land on Earth Data Hub",
       "description": "This notebook will provide you guidance on how to access and use the `reanalysis-era5-land-no-antartica-v0.zarr` datset on Earth Data Hub. The first goal is to compute the total precipitation observed during the Storm Daniel event, from 6 to 7 September 2023, in Greece, and compare it with the average 1991-2020 precipitation in the same area. The second goal is to compare the 2023 cumulative precipitation on a specific location (Greece interland) with the cumulative precipitation of past years (1991-2022) for the same location.",
       "source": "./use-cases/floods-precipitation-anomaly.ipynb",
       "export": "./use-cases/floods-precipitation-anomaly.html",
@@ -32,7 +32,7 @@
     },
     {
       "id": "tutorial-era5-ecv-for-climate-change",
-      "title": "Surface temperature anomalies in Winter",
+      "title": "How to work with ERA5 single levels on Earth Data Hub",
       "description": "An exploration of surface temperature variability using ERA5-derived data",
       "source": "./use-cases/tutorial-era5-ecv-for-climate-change.ipynb",
       "export": "./use-cases/tutorial-era5-ecv-for-climate-change.html",
