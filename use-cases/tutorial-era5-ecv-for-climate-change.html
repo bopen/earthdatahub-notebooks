@@ -7476,74 +7476,47 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=262f270b-342e-4431-a411-e19bfd08bb34">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ffd2ed95-2962-4e1e-8e2c-1671f0cadb67">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>First, let's import all the necessary dependencies.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d94bdb79-3c0d-4e40-afc5-4c689448814d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">cartopy</span> <span class="kn">import</span> <span class="n">crs</span><span class="p">,</span> <span class="n">feature</span>
-<span class="kn">import</span> <span class="nn">display</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-</pre></div>
+<h1 id="How-to-work-with-ERA5-Essential-Climate-Variables-on-Earth-Data-Hub">How to work with ERA5 Essential Climate Variables on Earth Data Hub<a class="anchor-link" href="#How-to-work-with-ERA5-Essential-Climate-Variables-on-Earth-Data-Hub">¶</a></h1><h3 id="Climatological-analysis-of-temperature-in-Germany">Climatological analysis of temperature in Germany<a class="anchor-link" href="#Climatological-analysis-of-temperature-in-Germany">¶</a></h3>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5fc866af-2456-4baf-8e38-48cea522c9b7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d876a60d-c381-431f-8b56-d82d6e68ecca">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Let's define some configuration variables.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f7622503-68bb-46fa-9739-79ef5a2df27e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">AREA</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"latitude"</span><span class="p">:</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span> <span class="s2">"longitude"</span><span class="p">:</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">24</span><span class="p">)}</span>
-<span class="n">DATASET</span> <span class="o">=</span> <span class="s2">"s3://hedp/era5/ecv-for-climate-change-1979-2023.zarr"</span>
-<span class="n">PROJECTION</span> <span class="o">=</span> <span class="n">crs</span><span class="o">.</span><span class="n">Miller</span><span class="p">()</span>
-<span class="n">SEASON</span> <span class="o">=</span> <span class="s2">"12"</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1a7a6978-a9fa-4b13-a37f-4494a9dfe508">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In the following lines we:</p>
-<ul>
-<li>establish a connection with the remote dataset</li>
-<li>show its metadata</li>
+<hr/>
+<p>This notebook will provide you guidance on how to access and use the <code>ecv-for-climate-change-1979-2023.zarr</code> datset on Earth Data Hub.</p>
+<p>The first goal is to compute the 2 metre temperature anomaly in Winter 2022 over Central Europe.</p>
+<p>The second goal is show the winter anomaly trend, for the available time period, by averaging the anomaly over the selected area.</p>
+<hr/>
+<h2 id="What-you-will-learn:">What you will learn:<a class="anchor-link" href="#What-you-will-learn:">¶</a></h2><ul>
+<li>how to access and preview the dataset</li>
+<li>select and reduce the data</li>
+<li>plot the results</li>
 </ul>
-<p>It is worth noticing that, in the first operation, only the information necessary to gather the dataset's metadata (e.g. its sizes, dimensions, variables' type and attributes) is actually downloaded from its remote location to the local machine.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f352e223-34e0-4e20-88c7-40e7a565bf66">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Data-access-and-preview">Data access and preview<a class="anchor-link" href="#Data-access-and-preview">¶</a></h2><hr/>
+<p>Xarray and Dask work together following a lazy principle. This means when you access and manipulate a Zarr store the data is in not immediately downloaded and loaded in memory. Instead, Dask constructs a task graph that represents the operations to be performed. A smart user will reduce the amount of data that needs to be downloaded before the computation takes place (e.g., when the <code>.compute()</code> or <code>.plot()</code> methods are called).</p>
+<p>To preview the data, only the dataset metadata must be downloaded. Xarray does this automatically:</p>
+<hr/>
 </div>
 </div>
 </div>
@@ -7552,10 +7525,18 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">DATASET</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{},</span> <span class="n">engine</span><span class="o">=</span><span class="s2">"zarr"</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"float32"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="c1"># your `~/.netrc` file MUST contain your credentials for earthdatahub.com</span>
+<span class="c1">#</span>
+<span class="c1"># machine earthdatahub.com</span>
+<span class="c1">#   login {your_username}</span>
+<span class="c1">#   password {your_password}</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">"s3://hedp/era5/ecv-for-climate-change-1979-2023.zarr"</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{},</span> <span class="n">engine</span><span class="o">=</span><span class="s2">"zarr"</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">"float32"</span><span class="p">)</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -7567,7 +7548,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
@@ -7954,11 +7935,11 @@ Attributes:
     GRIB_edition:            1
     GRIB_subCentre:          0
     history:                 2023-10-15T14:36 GRIB to CDM+CF via cfgrib-0.9.1...
-    institution:             European Centre for Medium-Range Weather Forecasts</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div><ul class="xr-sections"><li class="xr-section-item"><input class="xr-section-summary-in" disabled="" id="section-441b3a2d-f9f0-4631-a02b-145215818d02" type="checkbox"/><label class="xr-section-summary" for="section-441b3a2d-f9f0-4631-a02b-145215818d02" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list"><li><span class="xr-has-index">time</span>: 537</li><li><span class="xr-has-index">latitude</span>: 721</li><li><span class="xr-has-index">longitude</span>: 1440</li></ul></div><div class="xr-section-details"></div></li><li class="xr-section-item"><input checked="" class="xr-section-summary-in" id="section-0a0d5be8-2b2a-4925-adfc-a229f6febdb3" type="checkbox"/><label class="xr-section-summary" for="section-0a0d5be8-2b2a-4925-adfc-a229f6febdb3">Coordinates: <span>(8)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>depthBelowLandLayer</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-80c288e5-9403-4ae6-a2f5-035d6c23db65" type="checkbox"/><label for="attrs-80c288e5-9403-4ae6-a2f5-035d6c23db65" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-3e4b0b48-4921-4a46-a7c2-39e215eff8a6" type="checkbox"/><label for="data-3e4b0b48-4921-4a46-a7c2-39e215eff8a6" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>soil depth</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>standard_name :</span></dt><dd>depth</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">latitude</span></div><div class="xr-var-dims">(latitude)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">90.0 89.75 89.5 ... -89.75 -90.0</div><input class="xr-var-attrs-in" id="attrs-2f236bfa-7348-4a02-a108-fa2fc91c5c0e" type="checkbox"/><label for="attrs-2f236bfa-7348-4a02-a108-fa2fc91c5c0e" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-c4ddc6d0-f1ae-4f84-bc32-eb348ade7a1f" type="checkbox"/><label for="data-c4ddc6d0-f1ae-4f84-bc32-eb348ade7a1f" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>stored_direction :</span></dt><dd>decreasing</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class="xr-var-data"><pre>array([ 90.  ,  89.75,  89.5 , ..., -89.5 , -89.75, -90.  ])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">longitude</span></div><div class="xr-var-dims">(longitude)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">0.0 0.25 0.5 ... 359.2 359.5 359.8</div><input class="xr-var-attrs-in" id="attrs-1ba45970-dc24-44c0-aebd-870b99fbe490" type="checkbox"/><label for="attrs-1ba45970-dc24-44c0-aebd-870b99fbe490" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-78e751c2-b9a3-404b-b09e-62e24f9116a5" type="checkbox"/><label for="data-78e751c2-b9a3-404b-b09e-62e24f9116a5" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class="xr-var-data"><pre>array([0.0000e+00, 2.5000e-01, 5.0000e-01, ..., 3.5925e+02, 3.5950e+02,
-       3.5975e+02])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>number</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-5c23d9c4-0b98-4fdb-bf27-0a42e81ba27c" type="checkbox"/><label for="attrs-5c23d9c4-0b98-4fdb-bf27-0a42e81ba27c" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-5a62dd4f-21b6-4d28-aa03-b801b81ef6e5" type="checkbox"/><label for="data-5a62dd4f-21b6-4d28-aa03-b801b81ef6e5" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>ensemble member numerical id</dd><dt><span>standard_name :</span></dt><dd>realization</dd><dt><span>units :</span></dt><dd>1</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=int64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>step</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">timedelta64[ns]</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-640491aa-7461-47c8-a9eb-be80e3068ee6" type="checkbox"/><label for="attrs-640491aa-7461-47c8-a9eb-be80e3068ee6" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-59b019e9-72ac-47d3-9928-241b9497a1b4" type="checkbox"/><label for="data-59b019e9-72ac-47d3-9928-241b9497a1b4" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>time since forecast_reference_time</dd><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=timedelta64[ns]]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>surface</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-3995dd36-a241-4023-b9e6-6223b30da331" type="checkbox"/><label for="attrs-3995dd36-a241-4023-b9e6-6223b30da331" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-60dfe713-f343-41de-a495-6c447ded6fd2" type="checkbox"/><label for="data-60dfe713-f343-41de-a495-6c447ded6fd2" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>original GRIB coordinate for key: level(surface)</dd><dt><span>units :</span></dt><dd>1</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">time</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">datetime64[ns]</div><div class="xr-var-preview xr-preview">1978-12-31T18:00:00 ... 2023-08-...</div><input class="xr-var-attrs-in" id="attrs-d40c74e7-cc68-431b-afcb-1f3c295095a3" type="checkbox"/><label for="attrs-d40c74e7-cc68-431b-afcb-1f3c295095a3" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-ff2a8c92-6eac-4464-af49-735fd221c46c" type="checkbox"/><label for="data-ff2a8c92-6eac-4464-af49-735fd221c46c" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>initial time of forecast</dd><dt><span>standard_name :</span></dt><dd>forecast_reference_time</dd></dl></div><div class="xr-var-data"><pre>array(['1978-12-31T18:00:00.000000000', '1979-01-31T18:00:00.000000000',
+    institution:             European Centre for Medium-Range Weather Forecasts</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.Dataset</div></div><ul class="xr-sections"><li class="xr-section-item"><input class="xr-section-summary-in" disabled="" id="section-f4184709-fc0e-47ae-bd89-c66eff154cee" type="checkbox"/><label class="xr-section-summary" for="section-f4184709-fc0e-47ae-bd89-c66eff154cee" title="Expand/collapse section">Dimensions:</label><div class="xr-section-inline-details"><ul class="xr-dim-list"><li><span class="xr-has-index">time</span>: 537</li><li><span class="xr-has-index">latitude</span>: 721</li><li><span class="xr-has-index">longitude</span>: 1440</li></ul></div><div class="xr-section-details"></div></li><li class="xr-section-item"><input checked="" class="xr-section-summary-in" id="section-41e7a2f2-7fea-4e2f-bb73-b1a215a8aaa0" type="checkbox"/><label class="xr-section-summary" for="section-41e7a2f2-7fea-4e2f-bb73-b1a215a8aaa0">Coordinates: <span>(8)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>depthBelowLandLayer</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-f4598f39-147b-4677-9029-9c2fc47bbbd1" type="checkbox"/><label for="attrs-f4598f39-147b-4677-9029-9c2fc47bbbd1" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-dbc821c9-9acc-4641-a6e1-c8c6bd278509" type="checkbox"/><label for="data-dbc821c9-9acc-4641-a6e1-c8c6bd278509" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>soil depth</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>standard_name :</span></dt><dd>depth</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">latitude</span></div><div class="xr-var-dims">(latitude)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">90.0 89.75 89.5 ... -89.75 -90.0</div><input class="xr-var-attrs-in" id="attrs-d2b3c8b8-59e9-41d0-bcef-3885636b2632" type="checkbox"/><label for="attrs-d2b3c8b8-59e9-41d0-bcef-3885636b2632" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-100d95c6-edd3-4c9d-ac13-1b72a758248b" type="checkbox"/><label for="data-100d95c6-edd3-4c9d-ac13-1b72a758248b" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>stored_direction :</span></dt><dd>decreasing</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class="xr-var-data"><pre>array([ 90.  ,  89.75,  89.5 , ..., -89.5 , -89.75, -90.  ])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">longitude</span></div><div class="xr-var-dims">(longitude)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">0.0 0.25 0.5 ... 359.2 359.5 359.8</div><input class="xr-var-attrs-in" id="attrs-2ef70896-29e6-4af1-aaf0-bc1ebb2ae54d" type="checkbox"/><label for="attrs-2ef70896-29e6-4af1-aaf0-bc1ebb2ae54d" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-f921a3ee-5f57-4ef0-8561-f599d5bcbb12" type="checkbox"/><label for="data-f921a3ee-5f57-4ef0-8561-f599d5bcbb12" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class="xr-var-data"><pre>array([0.0000e+00, 2.5000e-01, 5.0000e-01, ..., 3.5925e+02, 3.5950e+02,
+       3.5975e+02])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>number</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-a7ddf6ff-fcf2-4f06-84bc-5d54950048e4" type="checkbox"/><label for="attrs-a7ddf6ff-fcf2-4f06-84bc-5d54950048e4" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-c6570db6-78b2-42f9-9a14-97ddf2c3e9b0" type="checkbox"/><label for="data-c6570db6-78b2-42f9-9a14-97ddf2c3e9b0" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>ensemble member numerical id</dd><dt><span>standard_name :</span></dt><dd>realization</dd><dt><span>units :</span></dt><dd>1</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=int64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>step</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">timedelta64[ns]</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-f4cdec72-e5f6-4b29-88bd-78b10e5b84d3" type="checkbox"/><label for="attrs-f4cdec72-e5f6-4b29-88bd-78b10e5b84d3" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-c954639a-b013-4bdb-aaaa-660a9c2bd7ba" type="checkbox"/><label for="data-c954639a-b013-4bdb-aaaa-660a9c2bd7ba" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>time since forecast_reference_time</dd><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=timedelta64[ns]]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>surface</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-db675640-f44b-4a59-b1ef-c949dec71ddf" type="checkbox"/><label for="attrs-db675640-f44b-4a59-b1ef-c949dec71ddf" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-42ef6ad8-a7ad-4c24-a08b-ac4d7a4243ba" type="checkbox"/><label for="data-42ef6ad8-a7ad-4c24-a08b-ac4d7a4243ba" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>original GRIB coordinate for key: level(surface)</dd><dt><span>units :</span></dt><dd>1</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">time</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">datetime64[ns]</div><div class="xr-var-preview xr-preview">1978-12-31T18:00:00 ... 2023-08-...</div><input class="xr-var-attrs-in" id="attrs-0683866e-7aae-4741-af54-3b485fd91cd5" type="checkbox"/><label for="attrs-0683866e-7aae-4741-af54-3b485fd91cd5" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-b84d1b03-9feb-4aac-af7f-83e5d9c683c6" type="checkbox"/><label for="data-b84d1b03-9feb-4aac-af7f-83e5d9c683c6" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>initial time of forecast</dd><dt><span>standard_name :</span></dt><dd>forecast_reference_time</dd></dl></div><div class="xr-var-data"><pre>array(['1978-12-31T18:00:00.000000000', '1979-01-31T18:00:00.000000000',
        '1979-02-28T18:00:00.000000000', ..., '2023-06-30T18:00:00.000000000',
        '2023-07-31T18:00:00.000000000', '2023-08-31T18:00:00.000000000'],
-      dtype='datetime64[ns]')</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>valid_time</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">datetime64[ns]</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(537,), meta=np.ndarray&gt;</div><input class="xr-var-attrs-in" id="attrs-1e4f84fe-03ef-4162-b540-c832a4480615" type="checkbox"/><label for="attrs-1e4f84fe-03ef-4162-b540-c832a4480615" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-9b6cf48d-67f8-4c31-b1f4-d31b4803953f" type="checkbox"/><label for="data-9b6cf48d-67f8-4c31-b1f4-d31b4803953f" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>time</dd><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class="xr-var-data"><table>
+      dtype='datetime64[ns]')</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>valid_time</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">datetime64[ns]</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(537,), meta=np.ndarray&gt;</div><input class="xr-var-attrs-in" id="attrs-da9819cd-b01e-4507-a353-8dbbb2abb09b" type="checkbox"/><label for="attrs-da9819cd-b01e-4507-a353-8dbbb2abb09b" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-e466c5ae-66d7-454e-82eb-cbf3d63ca1a6" type="checkbox"/><label for="data-e466c5ae-66d7-454e-82eb-cbf3d63ca1a6" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>time</dd><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class="xr-var-data"><table>
 <tr>
 <td>
 <table style="border-collapse: collapse;">
@@ -8007,7 +7988,7 @@ Attributes:
 </svg>
 </td>
 </tr>
-</table></div></li></ul></div></li><li class="xr-section-item"><input checked="" class="xr-section-summary-in" id="section-2ef49fc0-8120-41cf-946b-2cb01850e4e7" type="checkbox"/><label class="xr-section-summary" for="section-2ef49fc0-8120-41cf-946b-2cb01850e4e7">Data variables: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>swvl1</span></div><div class="xr-var-dims">(time, latitude, longitude)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(48, 256, 256), meta=np.ndarray&gt;</div><input class="xr-var-attrs-in" id="attrs-7cc1b1cd-f449-46c4-9daf-2aeb529ab607" type="checkbox"/><label for="attrs-7cc1b1cd-f449-46c4-9daf-2aeb529ab607" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-18c08777-a7c0-4845-95a8-ec4265fcf9e0" type="checkbox"/><label for="data-18c08777-a7c0-4845-95a8-ec4265fcf9e0" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>GRIB_NV :</span></dt><dd>0</dd><dt><span>GRIB_Nx :</span></dt><dd>1440</dd><dt><span>GRIB_Ny :</span></dt><dd>721</dd><dt><span>GRIB_cfName :</span></dt><dd>unknown</dd><dt><span>GRIB_cfVarName :</span></dt><dd>swvl1</dd><dt><span>GRIB_dataType :</span></dt><dd>an</dd><dt><span>GRIB_gridDefinitionDescription :</span></dt><dd>Latitude/Longitude Grid</dd><dt><span>GRIB_gridType :</span></dt><dd>regular_ll</dd><dt><span>GRIB_iDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_iScansNegatively :</span></dt><dd>0</dd><dt><span>GRIB_jDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_jPointsAreConsecutive :</span></dt><dd>0</dd><dt><span>GRIB_jScansPositively :</span></dt><dd>0</dd><dt><span>GRIB_latitudeOfFirstGridPointInDegrees :</span></dt><dd>90.0</dd><dt><span>GRIB_latitudeOfLastGridPointInDegrees :</span></dt><dd>-90.0</dd><dt><span>GRIB_longitudeOfFirstGridPointInDegrees :</span></dt><dd>0.0</dd><dt><span>GRIB_longitudeOfLastGridPointInDegrees :</span></dt><dd>359.75</dd><dt><span>GRIB_missingValue :</span></dt><dd>3.4028234663852886e+38</dd><dt><span>GRIB_name :</span></dt><dd>Volumetric soil water layer 1</dd><dt><span>GRIB_numberOfPoints :</span></dt><dd>1038240</dd><dt><span>GRIB_paramId :</span></dt><dd>39</dd><dt><span>GRIB_shortName :</span></dt><dd>swvl1</dd><dt><span>GRIB_stepType :</span></dt><dd>avgua</dd><dt><span>GRIB_stepUnits :</span></dt><dd>1</dd><dt><span>GRIB_totalNumber :</span></dt><dd>0</dd><dt><span>GRIB_typeOfLevel :</span></dt><dd>depthBelowLandLayer</dd><dt><span>GRIB_units :</span></dt><dd>m**3 m**-3</dd><dt><span>long_name :</span></dt><dd>Volumetric soil water layer 1</dd><dt><span>standard_name :</span></dt><dd>unknown</dd><dt><span>units :</span></dt><dd>m**3 m**-3</dd></dl></div><div class="xr-var-data"><table>
+</table></div></li></ul></div></li><li class="xr-section-item"><input checked="" class="xr-section-summary-in" id="section-cc7e2dcf-4b6d-4357-afe9-6b4a434fa347" type="checkbox"/><label class="xr-section-summary" for="section-cc7e2dcf-4b6d-4357-afe9-6b4a434fa347">Data variables: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>swvl1</span></div><div class="xr-var-dims">(time, latitude, longitude)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(48, 256, 256), meta=np.ndarray&gt;</div><input class="xr-var-attrs-in" id="attrs-3242c4a5-5b44-4d3b-9f23-96e8aee45c40" type="checkbox"/><label for="attrs-3242c4a5-5b44-4d3b-9f23-96e8aee45c40" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-6db84056-645c-439f-8a94-e3400c655a18" type="checkbox"/><label for="data-6db84056-645c-439f-8a94-e3400c655a18" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>GRIB_NV :</span></dt><dd>0</dd><dt><span>GRIB_Nx :</span></dt><dd>1440</dd><dt><span>GRIB_Ny :</span></dt><dd>721</dd><dt><span>GRIB_cfName :</span></dt><dd>unknown</dd><dt><span>GRIB_cfVarName :</span></dt><dd>swvl1</dd><dt><span>GRIB_dataType :</span></dt><dd>an</dd><dt><span>GRIB_gridDefinitionDescription :</span></dt><dd>Latitude/Longitude Grid</dd><dt><span>GRIB_gridType :</span></dt><dd>regular_ll</dd><dt><span>GRIB_iDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_iScansNegatively :</span></dt><dd>0</dd><dt><span>GRIB_jDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_jPointsAreConsecutive :</span></dt><dd>0</dd><dt><span>GRIB_jScansPositively :</span></dt><dd>0</dd><dt><span>GRIB_latitudeOfFirstGridPointInDegrees :</span></dt><dd>90.0</dd><dt><span>GRIB_latitudeOfLastGridPointInDegrees :</span></dt><dd>-90.0</dd><dt><span>GRIB_longitudeOfFirstGridPointInDegrees :</span></dt><dd>0.0</dd><dt><span>GRIB_longitudeOfLastGridPointInDegrees :</span></dt><dd>359.75</dd><dt><span>GRIB_missingValue :</span></dt><dd>3.4028234663852886e+38</dd><dt><span>GRIB_name :</span></dt><dd>Volumetric soil water layer 1</dd><dt><span>GRIB_numberOfPoints :</span></dt><dd>1038240</dd><dt><span>GRIB_paramId :</span></dt><dd>39</dd><dt><span>GRIB_shortName :</span></dt><dd>swvl1</dd><dt><span>GRIB_stepType :</span></dt><dd>avgua</dd><dt><span>GRIB_stepUnits :</span></dt><dd>1</dd><dt><span>GRIB_totalNumber :</span></dt><dd>0</dd><dt><span>GRIB_typeOfLevel :</span></dt><dd>depthBelowLandLayer</dd><dt><span>GRIB_units :</span></dt><dd>m**3 m**-3</dd><dt><span>long_name :</span></dt><dd>Volumetric soil water layer 1</dd><dt><span>standard_name :</span></dt><dd>unknown</dd><dt><span>units :</span></dt><dd>m**3 m**-3</dd></dl></div><div class="xr-var-data"><table>
 <tr>
 <td>
 <table style="border-collapse: collapse;">
@@ -8109,7 +8090,7 @@ Attributes:
 </svg>
 </td>
 </tr>
-</table></div></li><li class="xr-var-item"><div class="xr-var-name"><span>t2m</span></div><div class="xr-var-dims">(time, latitude, longitude)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(48, 256, 256), meta=np.ndarray&gt;</div><input class="xr-var-attrs-in" id="attrs-97ab57d0-0557-4849-8b58-68c25d4b9912" type="checkbox"/><label for="attrs-97ab57d0-0557-4849-8b58-68c25d4b9912" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-c0541c86-2eed-4719-b3e8-7dc787548cf1" type="checkbox"/><label for="data-c0541c86-2eed-4719-b3e8-7dc787548cf1" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>GRIB_NV :</span></dt><dd>0</dd><dt><span>GRIB_Nx :</span></dt><dd>1440</dd><dt><span>GRIB_Ny :</span></dt><dd>721</dd><dt><span>GRIB_cfName :</span></dt><dd>unknown</dd><dt><span>GRIB_cfVarName :</span></dt><dd>t2m</dd><dt><span>GRIB_dataType :</span></dt><dd>an</dd><dt><span>GRIB_gridDefinitionDescription :</span></dt><dd>Latitude/Longitude Grid</dd><dt><span>GRIB_gridType :</span></dt><dd>regular_ll</dd><dt><span>GRIB_iDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_iScansNegatively :</span></dt><dd>0</dd><dt><span>GRIB_jDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_jPointsAreConsecutive :</span></dt><dd>0</dd><dt><span>GRIB_jScansPositively :</span></dt><dd>0</dd><dt><span>GRIB_latitudeOfFirstGridPointInDegrees :</span></dt><dd>90.0</dd><dt><span>GRIB_latitudeOfLastGridPointInDegrees :</span></dt><dd>-90.0</dd><dt><span>GRIB_longitudeOfFirstGridPointInDegrees :</span></dt><dd>0.0</dd><dt><span>GRIB_longitudeOfLastGridPointInDegrees :</span></dt><dd>359.75</dd><dt><span>GRIB_missingValue :</span></dt><dd>3.4028234663852886e+38</dd><dt><span>GRIB_name :</span></dt><dd>2 metre temperature</dd><dt><span>GRIB_numberOfPoints :</span></dt><dd>1038240</dd><dt><span>GRIB_paramId :</span></dt><dd>167</dd><dt><span>GRIB_shortName :</span></dt><dd>2t</dd><dt><span>GRIB_stepType :</span></dt><dd>avgua</dd><dt><span>GRIB_stepUnits :</span></dt><dd>1</dd><dt><span>GRIB_totalNumber :</span></dt><dd>0</dd><dt><span>GRIB_typeOfLevel :</span></dt><dd>surface</dd><dt><span>GRIB_units :</span></dt><dd>K</dd><dt><span>long_name :</span></dt><dd>2 metre temperature</dd><dt><span>standard_name :</span></dt><dd>unknown</dd><dt><span>units :</span></dt><dd>K</dd></dl></div><div class="xr-var-data"><table>
+</table></div></li><li class="xr-var-item"><div class="xr-var-name"><span>t2m</span></div><div class="xr-var-dims">(time, latitude, longitude)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(48, 256, 256), meta=np.ndarray&gt;</div><input class="xr-var-attrs-in" id="attrs-825a0ead-23f7-400f-86eb-b77ba824e46f" type="checkbox"/><label for="attrs-825a0ead-23f7-400f-86eb-b77ba824e46f" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-43448438-8aaf-46fc-a3fa-ec97445e8dec" type="checkbox"/><label for="data-43448438-8aaf-46fc-a3fa-ec97445e8dec" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>GRIB_NV :</span></dt><dd>0</dd><dt><span>GRIB_Nx :</span></dt><dd>1440</dd><dt><span>GRIB_Ny :</span></dt><dd>721</dd><dt><span>GRIB_cfName :</span></dt><dd>unknown</dd><dt><span>GRIB_cfVarName :</span></dt><dd>t2m</dd><dt><span>GRIB_dataType :</span></dt><dd>an</dd><dt><span>GRIB_gridDefinitionDescription :</span></dt><dd>Latitude/Longitude Grid</dd><dt><span>GRIB_gridType :</span></dt><dd>regular_ll</dd><dt><span>GRIB_iDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_iScansNegatively :</span></dt><dd>0</dd><dt><span>GRIB_jDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_jPointsAreConsecutive :</span></dt><dd>0</dd><dt><span>GRIB_jScansPositively :</span></dt><dd>0</dd><dt><span>GRIB_latitudeOfFirstGridPointInDegrees :</span></dt><dd>90.0</dd><dt><span>GRIB_latitudeOfLastGridPointInDegrees :</span></dt><dd>-90.0</dd><dt><span>GRIB_longitudeOfFirstGridPointInDegrees :</span></dt><dd>0.0</dd><dt><span>GRIB_longitudeOfLastGridPointInDegrees :</span></dt><dd>359.75</dd><dt><span>GRIB_missingValue :</span></dt><dd>3.4028234663852886e+38</dd><dt><span>GRIB_name :</span></dt><dd>2 metre temperature</dd><dt><span>GRIB_numberOfPoints :</span></dt><dd>1038240</dd><dt><span>GRIB_paramId :</span></dt><dd>167</dd><dt><span>GRIB_shortName :</span></dt><dd>2t</dd><dt><span>GRIB_stepType :</span></dt><dd>avgua</dd><dt><span>GRIB_stepUnits :</span></dt><dd>1</dd><dt><span>GRIB_totalNumber :</span></dt><dd>0</dd><dt><span>GRIB_typeOfLevel :</span></dt><dd>surface</dd><dt><span>GRIB_units :</span></dt><dd>K</dd><dt><span>long_name :</span></dt><dd>2 metre temperature</dd><dt><span>standard_name :</span></dt><dd>unknown</dd><dt><span>units :</span></dt><dd>K</dd></dl></div><div class="xr-var-data"><table>
 <tr>
 <td>
 <table style="border-collapse: collapse;">
@@ -8211,7 +8192,7 @@ Attributes:
 </svg>
 </td>
 </tr>
-</table></div></li><li class="xr-var-item"><div class="xr-var-name"><span>tp</span></div><div class="xr-var-dims">(time, latitude, longitude)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(48, 256, 256), meta=np.ndarray&gt;</div><input class="xr-var-attrs-in" id="attrs-b23f8459-2542-4b87-99f1-15da24ade14e" type="checkbox"/><label for="attrs-b23f8459-2542-4b87-99f1-15da24ade14e" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-efc796eb-e0da-4d07-b89a-24934b7c93bb" type="checkbox"/><label for="data-efc796eb-e0da-4d07-b89a-24934b7c93bb" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>GRIB_NV :</span></dt><dd>0</dd><dt><span>GRIB_Nx :</span></dt><dd>1440</dd><dt><span>GRIB_Ny :</span></dt><dd>721</dd><dt><span>GRIB_cfName :</span></dt><dd>unknown</dd><dt><span>GRIB_cfVarName :</span></dt><dd>tp</dd><dt><span>GRIB_dataType :</span></dt><dd>fc</dd><dt><span>GRIB_gridDefinitionDescription :</span></dt><dd>Latitude/Longitude Grid</dd><dt><span>GRIB_gridType :</span></dt><dd>regular_ll</dd><dt><span>GRIB_iDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_iScansNegatively :</span></dt><dd>0</dd><dt><span>GRIB_jDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_jPointsAreConsecutive :</span></dt><dd>0</dd><dt><span>GRIB_jScansPositively :</span></dt><dd>0</dd><dt><span>GRIB_latitudeOfFirstGridPointInDegrees :</span></dt><dd>90.0</dd><dt><span>GRIB_latitudeOfLastGridPointInDegrees :</span></dt><dd>-90.0</dd><dt><span>GRIB_longitudeOfFirstGridPointInDegrees :</span></dt><dd>0.0</dd><dt><span>GRIB_longitudeOfLastGridPointInDegrees :</span></dt><dd>359.75</dd><dt><span>GRIB_missingValue :</span></dt><dd>3.4028234663852886e+38</dd><dt><span>GRIB_name :</span></dt><dd>Total precipitation</dd><dt><span>GRIB_numberOfPoints :</span></dt><dd>1038240</dd><dt><span>GRIB_paramId :</span></dt><dd>228</dd><dt><span>GRIB_shortName :</span></dt><dd>tp</dd><dt><span>GRIB_stepType :</span></dt><dd>avgad</dd><dt><span>GRIB_stepUnits :</span></dt><dd>1</dd><dt><span>GRIB_totalNumber :</span></dt><dd>0</dd><dt><span>GRIB_typeOfLevel :</span></dt><dd>surface</dd><dt><span>GRIB_units :</span></dt><dd>m</dd><dt><span>long_name :</span></dt><dd>Total precipitation</dd><dt><span>standard_name :</span></dt><dd>unknown</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class="xr-var-data"><table>
+</table></div></li><li class="xr-var-item"><div class="xr-var-name"><span>tp</span></div><div class="xr-var-dims">(time, latitude, longitude)</div><div class="xr-var-dtype">float32</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(48, 256, 256), meta=np.ndarray&gt;</div><input class="xr-var-attrs-in" id="attrs-cc4d0107-c052-4e14-add5-79f52fc99685" type="checkbox"/><label for="attrs-cc4d0107-c052-4e14-add5-79f52fc99685" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-8222c3b3-1650-4f3e-8c15-1a24de67a87d" type="checkbox"/><label for="data-8222c3b3-1650-4f3e-8c15-1a24de67a87d" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>GRIB_NV :</span></dt><dd>0</dd><dt><span>GRIB_Nx :</span></dt><dd>1440</dd><dt><span>GRIB_Ny :</span></dt><dd>721</dd><dt><span>GRIB_cfName :</span></dt><dd>unknown</dd><dt><span>GRIB_cfVarName :</span></dt><dd>tp</dd><dt><span>GRIB_dataType :</span></dt><dd>fc</dd><dt><span>GRIB_gridDefinitionDescription :</span></dt><dd>Latitude/Longitude Grid</dd><dt><span>GRIB_gridType :</span></dt><dd>regular_ll</dd><dt><span>GRIB_iDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_iScansNegatively :</span></dt><dd>0</dd><dt><span>GRIB_jDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_jPointsAreConsecutive :</span></dt><dd>0</dd><dt><span>GRIB_jScansPositively :</span></dt><dd>0</dd><dt><span>GRIB_latitudeOfFirstGridPointInDegrees :</span></dt><dd>90.0</dd><dt><span>GRIB_latitudeOfLastGridPointInDegrees :</span></dt><dd>-90.0</dd><dt><span>GRIB_longitudeOfFirstGridPointInDegrees :</span></dt><dd>0.0</dd><dt><span>GRIB_longitudeOfLastGridPointInDegrees :</span></dt><dd>359.75</dd><dt><span>GRIB_missingValue :</span></dt><dd>3.4028234663852886e+38</dd><dt><span>GRIB_name :</span></dt><dd>Total precipitation</dd><dt><span>GRIB_numberOfPoints :</span></dt><dd>1038240</dd><dt><span>GRIB_paramId :</span></dt><dd>228</dd><dt><span>GRIB_shortName :</span></dt><dd>tp</dd><dt><span>GRIB_stepType :</span></dt><dd>avgad</dd><dt><span>GRIB_stepUnits :</span></dt><dd>1</dd><dt><span>GRIB_totalNumber :</span></dt><dd>0</dd><dt><span>GRIB_typeOfLevel :</span></dt><dd>surface</dd><dt><span>GRIB_units :</span></dt><dd>m</dd><dt><span>long_name :</span></dt><dd>Total precipitation</dd><dt><span>standard_name :</span></dt><dd>unknown</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class="xr-var-data"><table>
 <tr>
 <td>
 <table style="border-collapse: collapse;">
@@ -8313,17 +8294,17 @@ Attributes:
 </svg>
 </td>
 </tr>
-</table></div></li></ul></div></li><li class="xr-section-item"><input class="xr-section-summary-in" id="section-966fd543-2250-41af-bb83-0ab94d759554" type="checkbox"/><label class="xr-section-summary" for="section-966fd543-2250-41af-bb83-0ab94d759554">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>latitude</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-2d8161e1-6b65-4097-a0f6-8ca236515c38" type="checkbox"><label for="index-2d8161e1-6b65-4097-a0f6-8ca236515c38" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([  90.0,  89.75,   89.5,  89.25,   89.0,  88.75,   88.5,  88.25,   88.0,
+</table></div></li></ul></div></li><li class="xr-section-item"><input class="xr-section-summary-in" id="section-3dd19530-bac8-47e0-825e-62fe6941990d" type="checkbox"/><label class="xr-section-summary" for="section-3dd19530-bac8-47e0-825e-62fe6941990d">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>latitude</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-ed98dcd0-7d2a-4c4e-ab4a-f113944c79da" type="checkbox"><label for="index-ed98dcd0-7d2a-4c4e-ab4a-f113944c79da" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([  90.0,  89.75,   89.5,  89.25,   89.0,  88.75,   88.5,  88.25,   88.0,
         87.75,
        ...
        -87.75,  -88.0, -88.25,  -88.5, -88.75,  -89.0, -89.25,  -89.5, -89.75,
         -90.0],
-      dtype='float64', name='latitude', length=721))</pre></div></input></li><li class="xr-var-item"><div class="xr-index-name"><div>longitude</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-3c8a8af3-b1d5-4081-aaf4-4117c8443590" type="checkbox"><label for="index-3c8a8af3-b1d5-4081-aaf4-4117c8443590" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([   0.0,   0.25,    0.5,   0.75,    1.0,   1.25,    1.5,   1.75,    2.0,
+      dtype='float64', name='latitude', length=721))</pre></div></input></li><li class="xr-var-item"><div class="xr-index-name"><div>longitude</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-1af91afc-3ed9-4ea2-b5bf-264dc15703e8" type="checkbox"><label for="index-1af91afc-3ed9-4ea2-b5bf-264dc15703e8" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([   0.0,   0.25,    0.5,   0.75,    1.0,   1.25,    1.5,   1.75,    2.0,
          2.25,
        ...
         357.5, 357.75,  358.0, 358.25,  358.5, 358.75,  359.0, 359.25,  359.5,
        359.75],
-      dtype='float64', name='longitude', length=1440))</pre></div></input></li><li class="xr-var-item"><div class="xr-index-name"><div>time</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-8db96e22-0e46-4039-95e0-ea552bd8f68b" type="checkbox"><label for="index-8db96e22-0e46-4039-95e0-ea552bd8f68b" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['1978-12-31 18:00:00', '1979-01-31 18:00:00',
+      dtype='float64', name='longitude', length=1440))</pre></div></input></li><li class="xr-var-item"><div class="xr-index-name"><div>time</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-4aab1be2-6b80-43c5-89e9-bdb5c2dbfdfc" type="checkbox"><label for="index-4aab1be2-6b80-43c5-89e9-bdb5c2dbfdfc" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['1978-12-31 18:00:00', '1979-01-31 18:00:00',
                '1979-02-28 18:00:00', '1979-03-31 18:00:00',
                '1979-04-30 18:00:00', '1979-05-31 18:00:00',
                '1979-06-30 18:00:00', '1979-07-31 18:00:00',
@@ -8334,20 +8315,47 @@ Attributes:
                '2023-03-31 18:00:00', '2023-04-30 18:00:00',
                '2023-05-31 18:00:00', '2023-06-30 18:00:00',
                '2023-07-31 18:00:00', '2023-08-31 18:00:00'],
-              dtype='datetime64[ns]', name='time', length=537, freq=None))</pre></div></input></li></ul></div></li><li class="xr-section-item"><input checked="" class="xr-section-summary-in" id="section-02238fac-28d3-4c3a-bcfa-d449a25d6454" type="checkbox"/><label class="xr-section-summary" for="section-02238fac-28d3-4c3a-bcfa-d449a25d6454">Attributes: <span>(7)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>Conventions :</span></dt><dd>CF-1.7</dd><dt><span>GRIB_centre :</span></dt><dd>ecmf</dd><dt><span>GRIB_centreDescription :</span></dt><dd>European Centre for Medium-Range Weather Forecasts</dd><dt><span>GRIB_edition :</span></dt><dd>1</dd><dt><span>GRIB_subCentre :</span></dt><dd>0</dd><dt><span>history :</span></dt><dd>2023-10-15T14:36 GRIB to CDM+CF via cfgrib-0.9.10.4/ecCodes-2.32.0 with {"source": "1month_anomaly_Global_ea_tp/1month_anomaly_Global_ea_tp_197901_1981-2010_v02.grib", "filter_by_keys": {}, "encode_cf": ["parameter", "time", "geography", "vertical"]}</dd><dt><span>institution :</span></dt><dd>European Centre for Medium-Range Weather Forecasts</dd></dl></div></li></ul></div></div>
+              dtype='datetime64[ns]', name='time', length=537, freq=None))</pre></div></input></li></ul></div></li><li class="xr-section-item"><input checked="" class="xr-section-summary-in" id="section-d1628923-9efe-4cdd-bd0b-3205fafbe0f8" type="checkbox"/><label class="xr-section-summary" for="section-d1628923-9efe-4cdd-bd0b-3205fafbe0f8">Attributes: <span>(7)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>Conventions :</span></dt><dd>CF-1.7</dd><dt><span>GRIB_centre :</span></dt><dd>ecmf</dd><dt><span>GRIB_centreDescription :</span></dt><dd>European Centre for Medium-Range Weather Forecasts</dd><dt><span>GRIB_edition :</span></dt><dd>1</dd><dt><span>GRIB_subCentre :</span></dt><dd>0</dd><dt><span>history :</span></dt><dd>2023-10-15T14:36 GRIB to CDM+CF via cfgrib-0.9.10.4/ecCodes-2.32.0 with {"source": "1month_anomaly_Global_ea_tp/1month_anomaly_Global_ea_tp_197901_1981-2010_v02.grib", "filter_by_keys": {}, "encode_cf": ["parameter", "time", "geography", "vertical"]}</dd><dt><span>institution :</span></dt><dd>European Centre for Medium-Range Weather Forecasts</dd></dl></div></li></ul></div></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8f60cdd9-01cc-4a68-ad6c-c7eb93d5ccb4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=023469bd-f4b1-4761-aaf1-e64490601446">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here we want to compute the average anomaly of the 2-metre Temperature in Winter 2022 over Central Europe.</p>
-<p>Note that the operations prescribed in the following lines are actually performed, and the resulting data downloaded, only when the <code>.compute()</code> method is met. For this reason, as a general rule to maximize efficiency, the <code>compute()</code> method should be placed after an operation which significantly reduce the amount of data, such as after selection and reduction operations.</p>
+<h2 id="Working-with-data">Working with data<a class="anchor-link" href="#Working-with-data">¶</a></h2><p>Datasets on EDH are typically very large and remotely hosted. Typical use imply a selection of the data followed by one or more reduction steps to be performed in a local or distributed Dask environment.</p>
+<p>The structure of a workflow that uses EDH data looks like this:</p>
+<ol>
+<li>data selection</li>
+<li>(optional) data reduction</li>
+<li>(optional) visualization</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6266ba11-3a44-4c5b-be6a-9dcf5867ad07">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="2-metre-temperature:-central-Europe-winter-2022-anomaly">2 metre temperature: central Europe winter 2022 anomaly<a class="anchor-link" href="#2-metre-temperature:-central-Europe-winter-2022-anomaly">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c6485a64-5b6f-41e9-a358-d7acb645ab7d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="1.-Data-selection">1. Data selection<a class="anchor-link" href="#1.-Data-selection">¶</a></h3><p>First, we select the 2 metre temperature anomaly from the ECV dataset. Then, we perform a geographical selection corresponding to the central Europe area. This greatly reduces the amount of data that will be downloaded from EDH.</p>
 </div>
 </div>
 </div>
@@ -8356,14 +8364,12 @@ Attributes:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">t2m</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">t2m</span>
-<span class="n">t2m_area</span> <span class="o">=</span> <span class="n">t2m</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="o">**</span><span class="n">AREA</span><span class="p">)</span>
-<span class="n">t2m_area_seasonal_mean</span> <span class="o">=</span> <span class="n">t2m_area</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">"QS-DEC"</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s2">"time"</span><span class="p">)</span>
-<span class="n">t2m_area_season_mean</span> <span class="o">=</span> <span class="n">t2m_area_seasonal_mean</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="sa">f</span><span class="s2">"2022-</span><span class="si">{</span><span class="n">SEASON</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="n">t2m_area_season_mean</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">t2m_anomaly</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">t2m</span>
+<span class="n">t2m_anomaly_central_europe</span> <span class="o">=</span> <span class="n">t2m_anomaly</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s2">"latitude"</span><span class="p">:</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span> <span class="s2">"longitude"</span><span class="p">:</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">24</span><span class="p">)})</span>
+<span class="n">t2m_anomaly_central_europe</span>
 </pre></div>
 </div>
 </div>
@@ -8374,7 +8380,7 @@ Attributes:
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
@@ -8739,8 +8745,8 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray 't2m' (time: 1, latitude: 41, longitude: 89)&gt;
-dask.array&lt;getitem, shape=(1, 41, 89), dtype=float32, chunksize=(1, 41, 89), chunktype=numpy.ndarray&gt;
+</style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray 't2m' (time: 537, latitude: 41, longitude: 89)&gt;
+dask.array&lt;getitem, shape=(537, 41, 89), dtype=float32, chunksize=(48, 41, 89), chunktype=numpy.ndarray&gt;
 Coordinates:
     depthBelowLandLayer  float64 ...
   * latitude             (latitude) float64 55.0 54.75 54.5 ... 45.5 45.25 45.0
@@ -8748,7 +8754,8 @@ Coordinates:
     number               int64 ...
     step                 timedelta64[ns] ...
     surface              float64 ...
-  * time                 (time) datetime64[ns] 2022-12-01
+  * time                 (time) datetime64[ns] 1978-12-31T18:00:00 ... 2023-0...
+    valid_time           (time) datetime64[ns] dask.array&lt;chunksize=(537,), meta=np.ndarray&gt;
 Attributes: (12/30)
     GRIB_NV:                                  0
     GRIB_Nx:                                  1440
@@ -8762,7 +8769,7 @@ Attributes: (12/30)
     GRIB_units:                               K
     long_name:                                2 metre temperature
     standard_name:                            unknown
-    units:                                    K</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name">'t2m'</div><ul class="xr-dim-list"><li><span class="xr-has-index">time</span>: 1</li><li><span class="xr-has-index">latitude</span>: 41</li><li><span class="xr-has-index">longitude</span>: 89</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input checked="" class="xr-array-in" id="section-daed68e8-47de-4cb0-a755-99b73df54afa" type="checkbox"/><label for="section-daed68e8-47de-4cb0-a755-99b73df54afa" title="Show/hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>dask.array&lt;chunksize=(1, 41, 89), meta=np.ndarray&gt;</span></div><div class="xr-array-data"><table>
+    units:                                    K</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name">'t2m'</div><ul class="xr-dim-list"><li><span class="xr-has-index">time</span>: 537</li><li><span class="xr-has-index">latitude</span>: 41</li><li><span class="xr-has-index">longitude</span>: 89</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input checked="" class="xr-array-in" id="section-01a5c819-df50-4600-a425-e6e21297db91" type="checkbox"/><label for="section-01a5c819-df50-4600-a425-e6e21297db91" title="Show/hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>dask.array&lt;chunksize=(48, 41, 89), meta=np.ndarray&gt;</span></div><div class="xr-array-data"><table>
 <tr>
 <td>
 <table style="border-collapse: collapse;">
@@ -8776,17 +8783,17 @@ Attributes: (12/30)
 <tbody>
 <tr>
 <th> Bytes </th>
-<td> 14.25 kiB </td>
-<td> 14.25 kiB </td>
+<td> 7.47 MiB </td>
+<td> 684.19 kiB </td>
 </tr>
 <tr>
 <th> Shape </th>
-<td> (1, 41, 89) </td>
-<td> (1, 41, 89) </td>
+<td> (537, 41, 89) </td>
+<td> (48, 41, 89) </td>
 </tr>
 <tr>
 <th> Dask graph </th>
-<td colspan="2"> 1 chunks in 46 graph layers </td>
+<td colspan="2"> 12 chunks in 3 graph layers </td>
 </tr>
 <tr>
 <th> Data type </th>
@@ -8796,43 +8803,65 @@ Attributes: (12/30)
 </table>
 </td>
 <td>
-<svg height="120" style="stroke:rgb(0,0,0);stroke-width:1" width="195">
+<svg height="157" style="stroke:rgb(0,0,0);stroke-width:1" width="171">
 <!-- Horizontal lines -->
-<line style="stroke-width:2" x1="10" x2="25" y1="0" y2="15"></line>
-<line style="stroke-width:2" x1="10" x2="25" y1="55" y2="70"></line>
+<line style="stroke-width:2" x1="10" x2="80" y1="0" y2="70"></line>
+<line style="stroke-width:2" x1="10" x2="80" y1="37" y2="107"></line>
 <!-- Vertical lines -->
-<line style="stroke-width:2" x1="10" x2="10" y1="0" y2="55"></line>
-<line style="stroke-width:2" x1="25" x2="25" y1="15" y2="70"></line>
+<line style="stroke-width:2" x1="10" x2="10" y1="0" y2="37"></line>
+<line x1="16" x2="16" y1="6" y2="43"></line>
+<line x1="22" x2="22" y1="12" y2="49"></line>
+<line x1="28" x2="28" y1="18" y2="55"></line>
+<line x1="35" x2="35" y1="25" y2="62"></line>
+<line x1="41" x2="41" y1="31" y2="68"></line>
+<line x1="47" x2="47" y1="37" y2="74"></line>
+<line x1="54" x2="54" y1="44" y2="81"></line>
+<line x1="60" x2="60" y1="50" y2="87"></line>
+<line x1="66" x2="66" y1="56" y2="93"></line>
+<line x1="73" x2="73" y1="63" y2="100"></line>
+<line x1="79" x2="79" y1="69" y2="106"></line>
+<line style="stroke-width:2" x1="80" x2="80" y1="70" y2="107"></line>
 <!-- Colored Rectangle -->
-<polygon points="10.0,0.0 25.281904811000775,15.281904811000775 25.281904811000775,70.56280368740526 10.0,55.28089887640449" style="fill:#ECB172A0;stroke-width:0"></polygon>
+<polygon points="10.0,0.0 80.58823529411765,70.58823529411765 80.58823529411765,107.64147969959205 10.0,37.05324440547441" style="fill:#ECB172A0;stroke-width:0"></polygon>
 <!-- Horizontal lines -->
-<line style="stroke-width:2" x1="10" x2="130" y1="0" y2="0"></line>
-<line style="stroke-width:2" x1="25" x2="145" y1="15" y2="15"></line>
+<line style="stroke-width:2" x1="10" x2="51" y1="0" y2="0"></line>
+<line x1="16" x2="57" y1="6" y2="6"></line>
+<line x1="22" x2="63" y1="12" y2="12"></line>
+<line x1="28" x2="70" y1="18" y2="18"></line>
+<line x1="35" x2="76" y1="25" y2="25"></line>
+<line x1="41" x2="82" y1="31" y2="31"></line>
+<line x1="47" x2="89" y1="37" y2="37"></line>
+<line x1="54" x2="95" y1="44" y2="44"></line>
+<line x1="60" x2="101" y1="50" y2="50"></line>
+<line x1="66" x2="107" y1="56" y2="56"></line>
+<line x1="73" x2="114" y1="63" y2="63"></line>
+<line x1="79" x2="120" y1="69" y2="69"></line>
+<line style="stroke-width:2" x1="80" x2="121" y1="70" y2="70"></line>
 <!-- Vertical lines -->
-<line style="stroke-width:2" x1="10" x2="25" y1="0" y2="15"></line>
-<line style="stroke-width:2" x1="130" x2="145" y1="0" y2="15"></line>
+<line style="stroke-width:2" x1="10" x2="80" y1="0" y2="70"></line>
+<line style="stroke-width:2" x1="51" x2="121" y1="0" y2="70"></line>
 <!-- Colored Rectangle -->
-<polygon points="10.0,0.0 130.0,0.0 145.28190481100077,15.281904811000775 25.281904811000775,15.281904811000775" style="fill:#ECB172A0;stroke-width:0"></polygon>
+<polygon points="10.0,0.0 51.17795104688595,0.0 121.7661863410036,70.58823529411765 80.58823529411765,70.58823529411765" style="fill:#ECB172A0;stroke-width:0"></polygon>
 <!-- Horizontal lines -->
-<line style="stroke-width:2" x1="25" x2="145" y1="15" y2="15"></line>
-<line style="stroke-width:2" x1="25" x2="145" y1="70" y2="70"></line>
+<line style="stroke-width:2" x1="80" x2="121" y1="70" y2="70"></line>
+<line style="stroke-width:2" x1="80" x2="121" y1="107" y2="107"></line>
 <!-- Vertical lines -->
-<line style="stroke-width:2" x1="25" x2="25" y1="15" y2="70"></line>
-<line style="stroke-width:2" x1="145" x2="145" y1="15" y2="70"></line>
+<line style="stroke-width:2" x1="80" x2="80" y1="70" y2="107"></line>
+<line style="stroke-width:2" x1="121" x2="121" y1="70" y2="107"></line>
 <!-- Colored Rectangle -->
-<polygon points="25.281904811000775,15.281904811000775 145.28190481100077,15.281904811000775 145.28190481100077,70.56280368740526 25.281904811000775,70.56280368740526" style="fill:#ECB172A0;stroke-width:0"></polygon>
+<polygon points="80.58823529411765,70.58823529411765 121.7661863410036,70.58823529411765 121.7661863410036,107.64147969959205 80.58823529411765,107.64147969959205" style="fill:#ECB172A0;stroke-width:0"></polygon>
 <!-- Text -->
-<text font-size="1.0rem" font-weight="100" text-anchor="middle" x="85.281905" y="90.562804">89</text>
-<text font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,165.281905,42.922354)" x="165.281905" y="42.922354">41</text>
-<text font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,7.640952,82.921851)" x="7.640952" y="82.921851">1</text>
+<text font-size="1.0rem" font-weight="100" text-anchor="middle" x="101.177211" y="127.641480">89</text>
+<text font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,141.766186,89.114857)" x="141.766186" y="89.114857">41</text>
+<text font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(45,35.294118,92.347362)" x="35.294118" y="92.347362">537</text>
 </svg>
 </td>
 </tr>
-</table></div></div></li><li class="xr-section-item"><input checked="" class="xr-section-summary-in" id="section-d7a3acfc-11c0-408c-b071-159e2dd47fe2" type="checkbox"/><label class="xr-section-summary" for="section-d7a3acfc-11c0-408c-b071-159e2dd47fe2">Coordinates: <span>(7)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>depthBelowLandLayer</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-fbbf2d07-0955-4014-bfae-63092db47b15" type="checkbox"/><label for="attrs-fbbf2d07-0955-4014-bfae-63092db47b15" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-a705f1e5-311e-438e-a254-83f967cc5a73" type="checkbox"/><label for="data-a705f1e5-311e-438e-a254-83f967cc5a73" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>soil depth</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>standard_name :</span></dt><dd>depth</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">latitude</span></div><div class="xr-var-dims">(latitude)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">55.0 54.75 54.5 ... 45.5 45.25 45.0</div><input class="xr-var-attrs-in" id="attrs-ab426f3e-bf8d-4b46-b09c-0a740b42fb6a" type="checkbox"/><label for="attrs-ab426f3e-bf8d-4b46-b09c-0a740b42fb6a" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-0de35c6a-873f-44b6-8b2e-81cad895731f" type="checkbox"/><label for="data-0de35c6a-873f-44b6-8b2e-81cad895731f" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>stored_direction :</span></dt><dd>decreasing</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class="xr-var-data"><pre>array([55.  , 54.75, 54.5 , 54.25, 54.  , 53.75, 53.5 , 53.25, 53.  , 52.75,
+</table></div></div></li><li class="xr-section-item"><input checked="" class="xr-section-summary-in" id="section-1171d084-6905-453e-96d6-77197c0e550f" type="checkbox"/><label class="xr-section-summary" for="section-1171d084-6905-453e-96d6-77197c0e550f">Coordinates: <span>(8)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>depthBelowLandLayer</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-8195a382-185e-4236-b84c-4e5d2306379b" type="checkbox"/><label for="attrs-8195a382-185e-4236-b84c-4e5d2306379b" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-7a495701-9d98-4ea7-9752-73de3ff3d555" type="checkbox"/><label for="data-7a495701-9d98-4ea7-9752-73de3ff3d555" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>soil depth</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>standard_name :</span></dt><dd>depth</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">latitude</span></div><div class="xr-var-dims">(latitude)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">55.0 54.75 54.5 ... 45.5 45.25 45.0</div><input class="xr-var-attrs-in" id="attrs-d3a4bef1-5488-43ec-a2cd-75bdb25957b9" type="checkbox"/><label for="attrs-d3a4bef1-5488-43ec-a2cd-75bdb25957b9" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-26e40ffc-138a-4a74-898b-639157f4db12" type="checkbox"/><label for="data-26e40ffc-138a-4a74-898b-639157f4db12" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>stored_direction :</span></dt><dd>decreasing</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class="xr-var-data"><pre>array([55.  , 54.75, 54.5 , 54.25, 54.  , 53.75, 53.5 , 53.25, 53.  , 52.75,
        52.5 , 52.25, 52.  , 51.75, 51.5 , 51.25, 51.  , 50.75, 50.5 , 50.25,
        50.  , 49.75, 49.5 , 49.25, 49.  , 48.75, 48.5 , 48.25, 48.  , 47.75,
        47.5 , 47.25, 47.  , 46.75, 46.5 , 46.25, 46.  , 45.75, 45.5 , 45.25,
-       45.  ])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">longitude</span></div><div class="xr-var-dims">(longitude)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">2.0 2.25 2.5 ... 23.5 23.75 24.0</div><input class="xr-var-attrs-in" id="attrs-d08a857e-5119-44d5-a51c-3b329ad10228" type="checkbox"/><label for="attrs-d08a857e-5119-44d5-a51c-3b329ad10228" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-3b3d29c6-7cef-4e3b-aae5-14edcb1cc24f" type="checkbox"/><label for="data-3b3d29c6-7cef-4e3b-aae5-14edcb1cc24f" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class="xr-var-data"><pre>array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ,  3.25,  3.5 ,  3.75,  4.  ,  4.25,
+       45.  ])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">longitude</span></div><div class="xr-var-dims">(longitude)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">2.0 2.25 2.5 ... 23.5 23.75 24.0</div><input class="xr-var-attrs-in" id="attrs-1b3eb837-a02e-4138-9b30-49fa79f2a4dd" type="checkbox"/><label for="attrs-1b3eb837-a02e-4138-9b30-49fa79f2a4dd" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-a7c6a257-9e74-431b-ac22-fa704a4f39cb" type="checkbox"/><label for="data-a7c6a257-9e74-431b-ac22-fa704a4f39cb" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class="xr-var-data"><pre>array([ 2.  ,  2.25,  2.5 ,  2.75,  3.  ,  3.25,  3.5 ,  3.75,  4.  ,  4.25,
         4.5 ,  4.75,  5.  ,  5.25,  5.5 ,  5.75,  6.  ,  6.25,  6.5 ,  6.75,
         7.  ,  7.25,  7.5 ,  7.75,  8.  ,  8.25,  8.5 ,  8.75,  9.  ,  9.25,
         9.5 ,  9.75, 10.  , 10.25, 10.5 , 10.75, 11.  , 11.25, 11.5 , 11.75,
@@ -8840,12 +8869,64 @@ Attributes: (12/30)
        14.5 , 14.75, 15.  , 15.25, 15.5 , 15.75, 16.  , 16.25, 16.5 , 16.75,
        17.  , 17.25, 17.5 , 17.75, 18.  , 18.25, 18.5 , 18.75, 19.  , 19.25,
        19.5 , 19.75, 20.  , 20.25, 20.5 , 20.75, 21.  , 21.25, 21.5 , 21.75,
-       22.  , 22.25, 22.5 , 22.75, 23.  , 23.25, 23.5 , 23.75, 24.  ])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>number</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-a1931b58-b62f-415d-805a-cef7c187fcd3" type="checkbox"/><label for="attrs-a1931b58-b62f-415d-805a-cef7c187fcd3" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-1d83a71e-fb0e-4efc-a3ed-64435994aa22" type="checkbox"/><label for="data-1d83a71e-fb0e-4efc-a3ed-64435994aa22" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>ensemble member numerical id</dd><dt><span>standard_name :</span></dt><dd>realization</dd><dt><span>units :</span></dt><dd>1</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=int64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>step</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">timedelta64[ns]</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-330548bc-03a8-4165-b31f-81dfac82b9d2" type="checkbox"/><label for="attrs-330548bc-03a8-4165-b31f-81dfac82b9d2" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-dc8bdc98-60d7-416c-85fd-4de92a77e103" type="checkbox"/><label for="data-dc8bdc98-60d7-416c-85fd-4de92a77e103" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>time since forecast_reference_time</dd><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=timedelta64[ns]]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>surface</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-2267a730-0792-4530-86d0-6c4891e9109c" type="checkbox"/><label for="attrs-2267a730-0792-4530-86d0-6c4891e9109c" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-5d869cd2-249b-43f0-8ce3-fd6278415b99" type="checkbox"/><label for="data-5d869cd2-249b-43f0-8ce3-fd6278415b99" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>original GRIB coordinate for key: level(surface)</dd><dt><span>units :</span></dt><dd>1</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">time</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">datetime64[ns]</div><div class="xr-var-preview xr-preview">2022-12-01</div><input class="xr-var-attrs-in" disabled="" id="attrs-35389d49-0538-4b1d-bd17-ebd47394d63b" type="checkbox"/><label for="attrs-35389d49-0538-4b1d-bd17-ebd47394d63b" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-8c44d075-c9e6-4f1e-8104-1213574fe311" type="checkbox"/><label for="data-8c44d075-c9e6-4f1e-8104-1213574fe311" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array(['2022-12-01T00:00:00.000000000'], dtype='datetime64[ns]')</pre></div></li></ul></div></li><li class="xr-section-item"><input class="xr-section-summary-in" id="section-5daa3d0b-625f-4991-9de1-2f19206fa225" type="checkbox"/><label class="xr-section-summary" for="section-5daa3d0b-625f-4991-9de1-2f19206fa225">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>latitude</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-bb09bb28-1593-4a6b-8b79-b73d21355de4" type="checkbox"><label for="index-bb09bb28-1593-4a6b-8b79-b73d21355de4" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([ 55.0, 54.75,  54.5, 54.25,  54.0, 53.75,  53.5, 53.25,  53.0, 52.75,
+       22.  , 22.25, 22.5 , 22.75, 23.  , 23.25, 23.5 , 23.75, 24.  ])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>number</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-e6077371-bac1-4c93-917b-25fee79e51a9" type="checkbox"/><label for="attrs-e6077371-bac1-4c93-917b-25fee79e51a9" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-2653c9b0-4ae0-48fa-8ece-625f4055c040" type="checkbox"/><label for="data-2653c9b0-4ae0-48fa-8ece-625f4055c040" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>ensemble member numerical id</dd><dt><span>standard_name :</span></dt><dd>realization</dd><dt><span>units :</span></dt><dd>1</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=int64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>step</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">timedelta64[ns]</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-2a5cac40-c8b1-4993-b565-379db93adc23" type="checkbox"/><label for="attrs-2a5cac40-c8b1-4993-b565-379db93adc23" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-cbd4fa87-7e54-428b-a531-37897f12a7c8" type="checkbox"/><label for="data-cbd4fa87-7e54-428b-a531-37897f12a7c8" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>time since forecast_reference_time</dd><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=timedelta64[ns]]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>surface</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-732b1eb7-84a1-47dc-ba73-92030e709f6c" type="checkbox"/><label for="attrs-732b1eb7-84a1-47dc-ba73-92030e709f6c" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-999d685a-ff60-4330-92be-0cf5ff9bdea6" type="checkbox"/><label for="data-999d685a-ff60-4330-92be-0cf5ff9bdea6" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>original GRIB coordinate for key: level(surface)</dd><dt><span>units :</span></dt><dd>1</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">time</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">datetime64[ns]</div><div class="xr-var-preview xr-preview">1978-12-31T18:00:00 ... 2023-08-...</div><input class="xr-var-attrs-in" id="attrs-da9bf8ba-3f7d-46bb-848c-d6e808a18ceb" type="checkbox"/><label for="attrs-da9bf8ba-3f7d-46bb-848c-d6e808a18ceb" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-2fcbff3a-ae49-4c4a-b94f-f96d54235b3d" type="checkbox"/><label for="data-2fcbff3a-ae49-4c4a-b94f-f96d54235b3d" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>initial time of forecast</dd><dt><span>standard_name :</span></dt><dd>forecast_reference_time</dd></dl></div><div class="xr-var-data"><pre>array(['1978-12-31T18:00:00.000000000', '1979-01-31T18:00:00.000000000',
+       '1979-02-28T18:00:00.000000000', ..., '2023-06-30T18:00:00.000000000',
+       '2023-07-31T18:00:00.000000000', '2023-08-31T18:00:00.000000000'],
+      dtype='datetime64[ns]')</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>valid_time</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">datetime64[ns]</div><div class="xr-var-preview xr-preview">dask.array&lt;chunksize=(537,), meta=np.ndarray&gt;</div><input class="xr-var-attrs-in" id="attrs-b3b26705-f390-4c26-a06a-c7228b386681" type="checkbox"/><label for="attrs-b3b26705-f390-4c26-a06a-c7228b386681" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-d95d043b-b7c1-41e0-a962-3c89b67f30e1" type="checkbox"/><label for="data-d95d043b-b7c1-41e0-a962-3c89b67f30e1" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>time</dd><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class="xr-var-data"><table>
+<tr>
+<td>
+<table style="border-collapse: collapse;">
+<thead>
+<tr>
+<td> </td>
+<th> Array </th>
+<th> Chunk </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th> Bytes </th>
+<td> 4.20 kiB </td>
+<td> 4.20 kiB </td>
+</tr>
+<tr>
+<th> Shape </th>
+<td> (537,) </td>
+<td> (537,) </td>
+</tr>
+<tr>
+<th> Dask graph </th>
+<td colspan="2"> 1 chunks in 2 graph layers </td>
+</tr>
+<tr>
+<th> Data type </th>
+<td colspan="2"> datetime64[ns] numpy.ndarray </td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<svg height="75" style="stroke:rgb(0,0,0);stroke-width:1" width="170">
+<!-- Horizontal lines -->
+<line style="stroke-width:2" x1="0" x2="120" y1="0" y2="0"></line>
+<line style="stroke-width:2" x1="0" x2="120" y1="25" y2="25"></line>
+<!-- Vertical lines -->
+<line style="stroke-width:2" x1="0" x2="0" y1="0" y2="25"></line>
+<line style="stroke-width:2" x1="120" x2="120" y1="0" y2="25"></line>
+<!-- Colored Rectangle -->
+<polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"></polygon>
+<!-- Text -->
+<text font-size="1.0rem" font-weight="100" text-anchor="middle" x="60.000000" y="45.412617">537</text>
+<text font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)" x="140.000000" y="12.706308">1</text>
+</svg>
+</td>
+</tr>
+</table></div></li></ul></div></li><li class="xr-section-item"><input class="xr-section-summary-in" id="section-cffd29be-cb17-4b4f-99b9-aafcbeb2a437" type="checkbox"/><label class="xr-section-summary" for="section-cffd29be-cb17-4b4f-99b9-aafcbeb2a437">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>latitude</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-639d0fc4-a17e-4677-bb8b-782eb2a7056d" type="checkbox"><label for="index-639d0fc4-a17e-4677-bb8b-782eb2a7056d" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([ 55.0, 54.75,  54.5, 54.25,  54.0, 53.75,  53.5, 53.25,  53.0, 52.75,
         52.5, 52.25,  52.0, 51.75,  51.5, 51.25,  51.0, 50.75,  50.5, 50.25,
         50.0, 49.75,  49.5, 49.25,  49.0, 48.75,  48.5, 48.25,  48.0, 47.75,
         47.5, 47.25,  47.0, 46.75,  46.5, 46.25,  46.0, 45.75,  45.5, 45.25,
         45.0],
-      dtype='float64', name='latitude'))</pre></div></input></li><li class="xr-var-item"><div class="xr-index-name"><div>longitude</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-b4dd54f9-c753-4422-840b-d4eaaf86155e" type="checkbox"><label for="index-b4dd54f9-c753-4422-840b-d4eaaf86155e" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([  2.0,  2.25,   2.5,  2.75,   3.0,  3.25,   3.5,  3.75,   4.0,  4.25,
+      dtype='float64', name='latitude'))</pre></div></input></li><li class="xr-var-item"><div class="xr-index-name"><div>longitude</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-51eeaba7-f371-4dc7-828b-44a0041c8377" type="checkbox"><label for="index-51eeaba7-f371-4dc7-828b-44a0041c8377" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([  2.0,  2.25,   2.5,  2.75,   3.0,  3.25,   3.5,  3.75,   4.0,  4.25,
          4.5,  4.75,   5.0,  5.25,   5.5,  5.75,   6.0,  6.25,   6.5,  6.75,
          7.0,  7.25,   7.5,  7.75,   8.0,  8.25,   8.5,  8.75,   9.0,  9.25,
          9.5,  9.75,  10.0, 10.25,  10.5, 10.75,  11.0, 11.25,  11.5, 11.75,
@@ -8854,23 +8935,45 @@ Attributes: (12/30)
         17.0, 17.25,  17.5, 17.75,  18.0, 18.25,  18.5, 18.75,  19.0, 19.25,
         19.5, 19.75,  20.0, 20.25,  20.5, 20.75,  21.0, 21.25,  21.5, 21.75,
         22.0, 22.25,  22.5, 22.75,  23.0, 23.25,  23.5, 23.75,  24.0],
-      dtype='float64', name='longitude'))</pre></div></input></li><li class="xr-var-item"><div class="xr-index-name"><div>time</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-52d2c246-7c41-45b4-904e-816d919a51b5" type="checkbox"><label for="index-52d2c246-7c41-45b4-904e-816d919a51b5" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['2022-12-01'], dtype='datetime64[ns]', name='time', freq='QS-DEC'))</pre></div></input></li></ul></div></li><li class="xr-section-item"><input class="xr-section-summary-in" id="section-d4ed2c56-83df-4039-ad9e-9538b08f2cfb" type="checkbox"/><label class="xr-section-summary" for="section-d4ed2c56-83df-4039-ad9e-9538b08f2cfb">Attributes: <span>(30)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>GRIB_NV :</span></dt><dd>0</dd><dt><span>GRIB_Nx :</span></dt><dd>1440</dd><dt><span>GRIB_Ny :</span></dt><dd>721</dd><dt><span>GRIB_cfName :</span></dt><dd>unknown</dd><dt><span>GRIB_cfVarName :</span></dt><dd>t2m</dd><dt><span>GRIB_dataType :</span></dt><dd>an</dd><dt><span>GRIB_gridDefinitionDescription :</span></dt><dd>Latitude/Longitude Grid</dd><dt><span>GRIB_gridType :</span></dt><dd>regular_ll</dd><dt><span>GRIB_iDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_iScansNegatively :</span></dt><dd>0</dd><dt><span>GRIB_jDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_jPointsAreConsecutive :</span></dt><dd>0</dd><dt><span>GRIB_jScansPositively :</span></dt><dd>0</dd><dt><span>GRIB_latitudeOfFirstGridPointInDegrees :</span></dt><dd>90.0</dd><dt><span>GRIB_latitudeOfLastGridPointInDegrees :</span></dt><dd>-90.0</dd><dt><span>GRIB_longitudeOfFirstGridPointInDegrees :</span></dt><dd>0.0</dd><dt><span>GRIB_longitudeOfLastGridPointInDegrees :</span></dt><dd>359.75</dd><dt><span>GRIB_missingValue :</span></dt><dd>3.4028234663852886e+38</dd><dt><span>GRIB_name :</span></dt><dd>2 metre temperature</dd><dt><span>GRIB_numberOfPoints :</span></dt><dd>1038240</dd><dt><span>GRIB_paramId :</span></dt><dd>167</dd><dt><span>GRIB_shortName :</span></dt><dd>2t</dd><dt><span>GRIB_stepType :</span></dt><dd>avgua</dd><dt><span>GRIB_stepUnits :</span></dt><dd>1</dd><dt><span>GRIB_totalNumber :</span></dt><dd>0</dd><dt><span>GRIB_typeOfLevel :</span></dt><dd>surface</dd><dt><span>GRIB_units :</span></dt><dd>K</dd><dt><span>long_name :</span></dt><dd>2 metre temperature</dd><dt><span>standard_name :</span></dt><dd>unknown</dd><dt><span>units :</span></dt><dd>K</dd></dl></div></li></ul></div></div>
+      dtype='float64', name='longitude'))</pre></div></input></li><li class="xr-var-item"><div class="xr-index-name"><div>time</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-5bed6c06-c4a4-4a12-a071-ba1ee3e2ee5b" type="checkbox"><label for="index-5bed6c06-c4a4-4a12-a071-ba1ee3e2ee5b" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['1978-12-31 18:00:00', '1979-01-31 18:00:00',
+               '1979-02-28 18:00:00', '1979-03-31 18:00:00',
+               '1979-04-30 18:00:00', '1979-05-31 18:00:00',
+               '1979-06-30 18:00:00', '1979-07-31 18:00:00',
+               '1979-08-31 18:00:00', '1979-09-30 18:00:00',
+               ...
+               '2022-11-30 18:00:00', '2022-12-31 18:00:00',
+               '2023-01-31 18:00:00', '2023-02-28 18:00:00',
+               '2023-03-31 18:00:00', '2023-04-30 18:00:00',
+               '2023-05-31 18:00:00', '2023-06-30 18:00:00',
+               '2023-07-31 18:00:00', '2023-08-31 18:00:00'],
+              dtype='datetime64[ns]', name='time', length=537, freq=None))</pre></div></input></li></ul></div></li><li class="xr-section-item"><input class="xr-section-summary-in" id="section-5d5d4a92-0ad4-43c7-9b4d-1ac1921a84fd" type="checkbox"/><label class="xr-section-summary" for="section-5d5d4a92-0ad4-43c7-9b4d-1ac1921a84fd">Attributes: <span>(30)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>GRIB_NV :</span></dt><dd>0</dd><dt><span>GRIB_Nx :</span></dt><dd>1440</dd><dt><span>GRIB_Ny :</span></dt><dd>721</dd><dt><span>GRIB_cfName :</span></dt><dd>unknown</dd><dt><span>GRIB_cfVarName :</span></dt><dd>t2m</dd><dt><span>GRIB_dataType :</span></dt><dd>an</dd><dt><span>GRIB_gridDefinitionDescription :</span></dt><dd>Latitude/Longitude Grid</dd><dt><span>GRIB_gridType :</span></dt><dd>regular_ll</dd><dt><span>GRIB_iDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_iScansNegatively :</span></dt><dd>0</dd><dt><span>GRIB_jDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_jPointsAreConsecutive :</span></dt><dd>0</dd><dt><span>GRIB_jScansPositively :</span></dt><dd>0</dd><dt><span>GRIB_latitudeOfFirstGridPointInDegrees :</span></dt><dd>90.0</dd><dt><span>GRIB_latitudeOfLastGridPointInDegrees :</span></dt><dd>-90.0</dd><dt><span>GRIB_longitudeOfFirstGridPointInDegrees :</span></dt><dd>0.0</dd><dt><span>GRIB_longitudeOfLastGridPointInDegrees :</span></dt><dd>359.75</dd><dt><span>GRIB_missingValue :</span></dt><dd>3.4028234663852886e+38</dd><dt><span>GRIB_name :</span></dt><dd>2 metre temperature</dd><dt><span>GRIB_numberOfPoints :</span></dt><dd>1038240</dd><dt><span>GRIB_paramId :</span></dt><dd>167</dd><dt><span>GRIB_shortName :</span></dt><dd>2t</dd><dt><span>GRIB_stepType :</span></dt><dd>avgua</dd><dt><span>GRIB_stepUnits :</span></dt><dd>1</dd><dt><span>GRIB_totalNumber :</span></dt><dd>0</dd><dt><span>GRIB_typeOfLevel :</span></dt><dd>surface</dd><dt><span>GRIB_units :</span></dt><dd>K</dd><dt><span>long_name :</span></dt><dd>2 metre temperature</dd><dt><span>standard_name :</span></dt><dd>unknown</dd><dt><span>units :</span></dt><dd>K</dd></dl></div></li></ul></div></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=183a9afe-4b31-4c4f-a60f-df0479c7481c">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d693318e-6f87-4a0c-9165-cc157612b112">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>At this point, no data has been downloaded yet, nor loaded in memory. However, the selection is small enough to call <code>.compute()</code> on it. This will trigger the download of data from EDH and load it in memory.</p>
+<p>We can measure the time it takes:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9379b642-f382-4fc8-a087-0c35fbc2f1cc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
-<span class="o">%%</span><span class="n">capture</span>
 
-<span class="n">t2m_area_season_mean</span> <span class="o">=</span> <span class="n">t2m_area_season_mean</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<span class="n">t2m_anomaly_central_europe</span> <span class="o">=</span> <span class="n">t2m_anomaly_central_europe</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -8883,21 +8986,106 @@ Attributes: (12/30)
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>CPU times: user 6.29 s, sys: 63.7 ms, total: 6.35 s
-Wall time: 6.37 s
+<pre>CPU times: user 3.51 s, sys: 1.38 s, total: 4.89 s
+Wall time: 1min 23s
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3f441f6c-5267-4ff8-a549-8bb3bde98b92">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1cfc1c32-4228-40e0-9753-e9fed73bf1a1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Let's plot the results on a map.</p>
+<p>The selection was small, this didn't take long!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9f3a0c2c-23fc-4cf6-a1a8-5b4cd29045d6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="2.-Data-reduction">2. Data reduction<a class="anchor-link" href="#2.-Data-reduction">¶</a></h3><p>Now that the data is loaded in memory, we can easily compute the average 2 metre temperature anomaly by season:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ff1ec496-e06b-4941-b31c-441008eee584">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">t2m_anomaly_central_europe_seasonal_mean</span> <span class="o">=</span> <span class="n">t2m_anomaly_central_europe</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">"QS-DEC"</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s2">"time"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>OMP: Info #276: omp_set_nested routine deprecated, please use omp_set_max_active_levels instead.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1a54f31b-9837-4172-b7d4-b29e2c45bd05">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>And the winter 2022 anomaly:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=af3c79b3-8430-4990-b77b-8c69487435c7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">t2m_anomaly_central_europe_winter_2022_mean</span> <span class="o">=</span> <span class="n">t2m_anomaly_central_europe_seasonal_mean</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="sa">f</span><span class="s2">"2022-</span><span class="si">{</span><span class="mi">12</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5d1b90cf-17bd-433c-b2aa-d4fdd2c4ab60">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="3.-Visualization">3. Visualization<a class="anchor-link" href="#3.-Visualization">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=896ef114-b3b0-42db-b308-1e4b745a6fd4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We can plot the average winter 2022 anomaly on a map:</p>
 </div>
 </div>
 </div>
@@ -8909,11 +9097,14 @@ Wall time: 6.37 s
 <div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">cartopy</span> <span class="kn">import</span> <span class="n">crs</span><span class="p">,</span> <span class="n">feature</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">_</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span>
     <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
-    <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">"projection"</span><span class="p">:</span> <span class="n">PROJECTION</span><span class="p">},</span>
+    <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">"projection"</span><span class="p">:</span> <span class="n">crs</span><span class="o">.</span><span class="n">Miller</span><span class="p">()},</span>
 <span class="p">)</span>
-<span class="n">t2m_area_season_mean</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+<span class="n">t2m_anomaly_central_europe_winter_2022_mean</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> 
     <span class="n">cmap</span><span class="o">=</span><span class="s2">"YlOrRd"</span><span class="p">,</span> 
     <span class="n">transform</span><span class="o">=</span><span class="n">crs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> 
@@ -8941,14 +9132,24 @@ Wall time: 6.37 s
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4a56c1a8-4f6f-47b1-9417-47452d27955a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="2-metre-temperature:-central-Europe-winter-anomaly-trend-(spatial-mean)">2 metre temperature: central Europe winter anomaly trend (spatial mean)<a class="anchor-link" href="#2-metre-temperature:-central-Europe-winter-anomaly-trend-(spatial-mean)">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=64d37b18-ac56-455e-89a1-4a4c8e67bb36">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Now, we want to compute the average 2-metre Temperature anomaly over Central Europe for each Winter in the available time range.</p>
-<p>The same considerations done before apply here.</p>
+<p>We want to compute the average 2 metre temperature anomaly trend over Central Europe in winter. We already have <code>t2m_anomaly_central_europe</code> loaded in memory, we average it by seson and region:</p>
 </div>
 </div>
 </div>
@@ -8960,10 +9161,8 @@ Wall time: 6.37 s
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">t2m</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">t2m</span>
-<span class="n">t2m_area</span> <span class="o">=</span> <span class="n">t2m</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="o">**</span><span class="n">AREA</span><span class="p">)</span>
-<span class="n">t2m_area_seasonal_spatial_mean</span> <span class="o">=</span> <span class="n">t2m_area</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">"QS-DEC"</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">[</span><span class="s2">"time"</span><span class="p">,</span> <span class="s2">"latitude"</span><span class="p">,</span> <span class="s2">"longitude"</span><span class="p">])</span>
-<span class="n">t2m_area_seasonal_spatial_mean</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">t2m_anomaly_central_europe_seasonal_and_spatial_mean</span> <span class="o">=</span> <span class="n">t2m_anomaly_central_europe</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s2">"QS-DEC"</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">[</span><span class="s2">"time"</span><span class="p">,</span> <span class="s2">"latitude"</span><span class="p">,</span> <span class="s2">"longitude"</span><span class="p">])</span>
+<span class="n">t2m_anomaly_central_europe_seasonal_and_spatial_mean</span>
 </pre></div>
 </div>
 </div>
@@ -9340,12 +9539,47 @@ dl.xr-attrs {
   fill: currentColor;
 }
 </style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray 't2m' (time: 179)&gt;
-dask.array&lt;groupby_nanmean, shape=(179,), dtype=float32, chunksize=(16,), chunktype=numpy.ndarray&gt;
+array([-2.060959  , -0.45316032, -1.5052906 ,  0.15483867, -1.2419376 ,
+       -2.0460992 , -1.1296408 , -1.0432692 , -0.3133328 , -0.40941787,
+       -0.68241465, -0.96041375, -1.158114  , -0.7384622 ,  0.6626135 ,
+        0.86394155,  0.5391145 , -0.04454695,  0.658656  , -0.5829343 ,
+       -0.7674438 , -1.5542306 , -1.2261734 ,  0.38303712, -3.8773434 ,
+       -0.9083585 , -0.5325631 , -0.37815017, -2.5465033 , -0.13529216,
+       -1.1898304 ,  0.29763573, -3.844396  , -1.3422297 , -0.49450874,
+        0.4939549 ,  0.89289874, -0.19609773, -0.30868402, -0.3769552 ,
+        2.2923522 , -0.26558912, -0.06340466,  0.19422808,  3.0285063 ,
+       -0.16238637, -0.8706532 ,  0.1259329 , -0.1930461 , -2.1154659 ,
+        0.5931147 , -0.8084522 ,  0.7189054 ,  0.27479738,  0.7535636 ,
+       -0.59424114, -0.2840044 ,  0.7270577 , -1.3418669 , -0.8755802 ,
+        1.3126562 , -0.29825318,  1.2617062 ,  0.831811  ,  0.99885905,
+       -0.6044783 ,  0.32553503, -0.6107483 , -2.8653398 , -0.23335896,
+       -1.6941855 , -0.5870248 ,  0.40927777, -0.74980617,  0.22781567,
+       -0.16646306,  1.6964434 ,  0.659238  , -0.5938389 , -1.5513294 ,
+        0.7249287 ,  0.3585273 ,  1.0583944 , -0.22196446,  1.0320425 ,
+        1.5091852 , -0.5830848 ,  1.961222  ,  0.93315333, -0.3289366 ,
+       -0.03018923, -0.17068556,  2.0469658 ,  0.93966997,  0.33949322,
+       -0.1183575 , -1.0529342 ,  1.4598475 ,  1.3155189 , -0.08185413,
+       -0.09058002, -0.2972214 ,  0.05204505,  0.6677273 , -0.6966607 ,
+        0.374496  ,  0.11622899,  0.2791322 , -2.1575992 ,  0.3797368 ,
+        1.4776993 ,  2.5945342 ,  3.0873117 ,  1.9201499 , -0.34579396,
+       -0.48396856,  2.006877  ,  0.7420931 , -0.22089075,  0.6773413 ,
+       -0.49495363,  1.0849769 ,  0.9993198 ,  0.51327455, -1.3782848 ,
+       -0.04597156,  0.33619487, -1.3149176 ,  0.18512724,  1.5200273 ,
+        0.4424585 ,  0.88775706, -0.13878648,  0.6079565 ,  0.74848837,
+        0.37298816, -1.3482239 , -0.03537074,  0.5446182 ,  1.4842598 ,
+        2.675531  ,  0.7772162 ,  0.43915594,  2.0201383 ,  1.2858888 ,
+        0.2734589 ,  1.4311827 ,  2.047458  ,  1.365936  ,  0.77184975,
+        1.1819242 , -0.06905834,  0.7732378 ,  0.8916962 ,  0.31796834,
+        1.179895  , -0.2360961 ,  2.8160467 ,  1.9308683 ,  1.6264722 ,
+        1.842588  ,  1.2035154 ,  1.1523886 ,  2.1609879 ,  2.7206538 ,
+        0.6640334 ,  1.249677  ,  1.6033627 ,  0.6236197 , -0.22357346,
+        0.62067425,  0.6341066 ,  1.9439217 ,  1.1460983 ,  1.2255656 ,
+        1.9805168 ,  2.4085422 ,  0.56737703,  2.0665157 ], dtype=float32)
 Coordinates:
-    depthBelowLandLayer  float64 ...
-    number               int64 ...
-    step                 timedelta64[ns] ...
-    surface              float64 ...
+    depthBelowLandLayer  float64 0.0
+    number               int64 0
+    step                 timedelta64[ns] 12 days
+    surface              float64 0.0
   * time                 (time) datetime64[ns] 1978-12-01 ... 2023-06-01
 Attributes: (12/30)
     GRIB_NV:                                  0
@@ -9360,67 +9594,42 @@ Attributes: (12/30)
     GRIB_units:                               K
     long_name:                                2 metre temperature
     standard_name:                            unknown
-    units:                                    K</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name">'t2m'</div><ul class="xr-dim-list"><li><span class="xr-has-index">time</span>: 179</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input checked="" class="xr-array-in" id="section-c7b2f955-f4d5-439f-aa29-fec366f5f18d" type="checkbox"/><label for="section-c7b2f955-f4d5-439f-aa29-fec366f5f18d" title="Show/hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>dask.array&lt;chunksize=(16,), meta=np.ndarray&gt;</span></div><div class="xr-array-data"><table>
-<tr>
-<td>
-<table style="border-collapse: collapse;">
-<thead>
-<tr>
-<td> </td>
-<th> Array </th>
-<th> Chunk </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th> Bytes </th>
-<td> 716 B </td>
-<td> 64 B </td>
-</tr>
-<tr>
-<th> Shape </th>
-<td> (179,) </td>
-<td> (16,) </td>
-</tr>
-<tr>
-<th> Dask graph </th>
-<td colspan="2"> 12 chunks in 45 graph layers </td>
-</tr>
-<tr>
-<th> Data type </th>
-<td colspan="2"> float32 numpy.ndarray </td>
-</tr>
-</tbody>
-</table>
-</td>
-<td>
-<svg height="75" style="stroke:rgb(0,0,0);stroke-width:1" width="170">
-<!-- Horizontal lines -->
-<line style="stroke-width:2" x1="0" x2="120" y1="0" y2="0"></line>
-<line style="stroke-width:2" x1="0" x2="120" y1="25" y2="25"></line>
-<!-- Vertical lines -->
-<line style="stroke-width:2" x1="0" x2="0" y1="0" y2="25"></line>
-<line x1="10" x2="10" y1="0" y2="25"></line>
-<line x1="21" x2="21" y1="0" y2="25"></line>
-<line x1="32" x2="32" y1="0" y2="25"></line>
-<line x1="42" x2="42" y1="0" y2="25"></line>
-<line x1="53" x2="53" y1="0" y2="25"></line>
-<line x1="64" x2="64" y1="0" y2="25"></line>
-<line x1="75" x2="75" y1="0" y2="25"></line>
-<line x1="85" x2="85" y1="0" y2="25"></line>
-<line x1="96" x2="96" y1="0" y2="25"></line>
-<line x1="107" x2="107" y1="0" y2="25"></line>
-<line x1="117" x2="117" y1="0" y2="25"></line>
-<line style="stroke-width:2" x1="120" x2="120" y1="0" y2="25"></line>
-<!-- Colored Rectangle -->
-<polygon points="0.0,0.0 120.0,0.0 120.0,25.412616514582485 0.0,25.412616514582485" style="fill:#ECB172A0;stroke-width:0"></polygon>
-<!-- Text -->
-<text font-size="1.0rem" font-weight="100" text-anchor="middle" x="60.000000" y="45.412617">179</text>
-<text font-size="1.0rem" font-weight="100" text-anchor="middle" transform="rotate(0,140.000000,12.706308)" x="140.000000" y="12.706308">1</text>
-</svg>
-</td>
-</tr>
-</table></div></div></li><li class="xr-section-item"><input checked="" class="xr-section-summary-in" id="section-3c0e504a-6377-4f0c-bcd9-49d40c405085" type="checkbox"/><label class="xr-section-summary" for="section-3c0e504a-6377-4f0c-bcd9-49d40c405085">Coordinates: <span>(5)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>depthBelowLandLayer</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-82a1b79a-4ffa-4fae-bfa8-4c5c8acff702" type="checkbox"/><label for="attrs-82a1b79a-4ffa-4fae-bfa8-4c5c8acff702" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-8c83415e-77c0-451f-b41d-a55b14001e0d" type="checkbox"/><label for="data-8c83415e-77c0-451f-b41d-a55b14001e0d" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>soil depth</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>standard_name :</span></dt><dd>depth</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>number</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-7a83bef9-f12a-4264-be12-3fa02fab0fc5" type="checkbox"/><label for="attrs-7a83bef9-f12a-4264-be12-3fa02fab0fc5" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-df5329ae-dcc6-4a9b-b5e8-70b4ffe4f1f8" type="checkbox"/><label for="data-df5329ae-dcc6-4a9b-b5e8-70b4ffe4f1f8" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>ensemble member numerical id</dd><dt><span>standard_name :</span></dt><dd>realization</dd><dt><span>units :</span></dt><dd>1</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=int64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>step</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">timedelta64[ns]</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-1462ff5f-dc37-4f11-bdf2-9e416a981445" type="checkbox"/><label for="attrs-1462ff5f-dc37-4f11-bdf2-9e416a981445" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-c4fb26e4-4bc8-43fc-afdb-12a6233d7e34" type="checkbox"/><label for="data-c4fb26e4-4bc8-43fc-afdb-12a6233d7e34" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>time since forecast_reference_time</dd><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=timedelta64[ns]]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>surface</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input class="xr-var-attrs-in" id="attrs-74099c4b-7ae5-4864-b934-ac840eb47962" type="checkbox"/><label for="attrs-74099c4b-7ae5-4864-b934-ac840eb47962" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-85522c7c-e4cd-48f1-9684-37b8c45938b4" type="checkbox"/><label for="data-85522c7c-e4cd-48f1-9684-37b8c45938b4" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>original GRIB coordinate for key: level(surface)</dd><dt><span>units :</span></dt><dd>1</dd></dl></div><div class="xr-var-data"><pre>[1 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">time</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">datetime64[ns]</div><div class="xr-var-preview xr-preview">1978-12-01 ... 2023-06-01</div><input class="xr-var-attrs-in" disabled="" id="attrs-69e4a702-c320-4526-a1d1-b0dfd761ca74" type="checkbox"/><label for="attrs-69e4a702-c320-4526-a1d1-b0dfd761ca74" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-490db142-0d52-4678-9c29-67a0d762e4fb" type="checkbox"/><label for="data-490db142-0d52-4678-9c29-67a0d762e4fb" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array(['1978-12-01T00:00:00.000000000', '1979-03-01T00:00:00.000000000',
+    units:                                    K</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name">'t2m'</div><ul class="xr-dim-list"><li><span class="xr-has-index">time</span>: 179</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input checked="" class="xr-array-in" id="section-f9e53c0c-fe6a-4860-8a17-372b0c0bfeb7" type="checkbox"/><label for="section-f9e53c0c-fe6a-4860-8a17-372b0c0bfeb7" title="Show/hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>-2.061 -0.4532 -1.505 0.1548 -1.242 ... 1.226 1.981 2.409 0.5674 2.067</span></div><div class="xr-array-data"><pre>array([-2.060959  , -0.45316032, -1.5052906 ,  0.15483867, -1.2419376 ,
+       -2.0460992 , -1.1296408 , -1.0432692 , -0.3133328 , -0.40941787,
+       -0.68241465, -0.96041375, -1.158114  , -0.7384622 ,  0.6626135 ,
+        0.86394155,  0.5391145 , -0.04454695,  0.658656  , -0.5829343 ,
+       -0.7674438 , -1.5542306 , -1.2261734 ,  0.38303712, -3.8773434 ,
+       -0.9083585 , -0.5325631 , -0.37815017, -2.5465033 , -0.13529216,
+       -1.1898304 ,  0.29763573, -3.844396  , -1.3422297 , -0.49450874,
+        0.4939549 ,  0.89289874, -0.19609773, -0.30868402, -0.3769552 ,
+        2.2923522 , -0.26558912, -0.06340466,  0.19422808,  3.0285063 ,
+       -0.16238637, -0.8706532 ,  0.1259329 , -0.1930461 , -2.1154659 ,
+        0.5931147 , -0.8084522 ,  0.7189054 ,  0.27479738,  0.7535636 ,
+       -0.59424114, -0.2840044 ,  0.7270577 , -1.3418669 , -0.8755802 ,
+        1.3126562 , -0.29825318,  1.2617062 ,  0.831811  ,  0.99885905,
+       -0.6044783 ,  0.32553503, -0.6107483 , -2.8653398 , -0.23335896,
+       -1.6941855 , -0.5870248 ,  0.40927777, -0.74980617,  0.22781567,
+       -0.16646306,  1.6964434 ,  0.659238  , -0.5938389 , -1.5513294 ,
+        0.7249287 ,  0.3585273 ,  1.0583944 , -0.22196446,  1.0320425 ,
+        1.5091852 , -0.5830848 ,  1.961222  ,  0.93315333, -0.3289366 ,
+       -0.03018923, -0.17068556,  2.0469658 ,  0.93966997,  0.33949322,
+       -0.1183575 , -1.0529342 ,  1.4598475 ,  1.3155189 , -0.08185413,
+       -0.09058002, -0.2972214 ,  0.05204505,  0.6677273 , -0.6966607 ,
+        0.374496  ,  0.11622899,  0.2791322 , -2.1575992 ,  0.3797368 ,
+        1.4776993 ,  2.5945342 ,  3.0873117 ,  1.9201499 , -0.34579396,
+       -0.48396856,  2.006877  ,  0.7420931 , -0.22089075,  0.6773413 ,
+       -0.49495363,  1.0849769 ,  0.9993198 ,  0.51327455, -1.3782848 ,
+       -0.04597156,  0.33619487, -1.3149176 ,  0.18512724,  1.5200273 ,
+        0.4424585 ,  0.88775706, -0.13878648,  0.6079565 ,  0.74848837,
+        0.37298816, -1.3482239 , -0.03537074,  0.5446182 ,  1.4842598 ,
+        2.675531  ,  0.7772162 ,  0.43915594,  2.0201383 ,  1.2858888 ,
+        0.2734589 ,  1.4311827 ,  2.047458  ,  1.365936  ,  0.77184975,
+        1.1819242 , -0.06905834,  0.7732378 ,  0.8916962 ,  0.31796834,
+        1.179895  , -0.2360961 ,  2.8160467 ,  1.9308683 ,  1.6264722 ,
+        1.842588  ,  1.2035154 ,  1.1523886 ,  2.1609879 ,  2.7206538 ,
+        0.6640334 ,  1.249677  ,  1.6033627 ,  0.6236197 , -0.22357346,
+        0.62067425,  0.6341066 ,  1.9439217 ,  1.1460983 ,  1.2255656 ,
+        1.9805168 ,  2.4085422 ,  0.56737703,  2.0665157 ], dtype=float32)</pre></div></div></li><li class="xr-section-item"><input checked="" class="xr-section-summary-in" id="section-e7521ee0-c8d4-483f-ad76-d7386c84bfc1" type="checkbox"/><label class="xr-section-summary" for="section-e7521ee0-c8d4-483f-ad76-d7386c84bfc1">Coordinates: <span>(5)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>depthBelowLandLayer</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">0.0</div><input class="xr-var-attrs-in" id="attrs-6dc9a3d7-a240-494a-81a5-1dd4402436ed" type="checkbox"/><label for="attrs-6dc9a3d7-a240-494a-81a5-1dd4402436ed" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-c59602b0-e5d9-4fa3-a2ed-29abe53bd98f" type="checkbox"/><label for="data-c59602b0-e5d9-4fa3-a2ed-29abe53bd98f" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>soil depth</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>standard_name :</span></dt><dd>depth</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class="xr-var-data"><pre>array(0.)</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>number</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0</div><input class="xr-var-attrs-in" id="attrs-96823136-edb2-4468-a14a-172ba4762997" type="checkbox"/><label for="attrs-96823136-edb2-4468-a14a-172ba4762997" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-88e5c4ef-2d67-4c28-b431-426c02739f1c" type="checkbox"/><label for="data-88e5c4ef-2d67-4c28-b431-426c02739f1c" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>ensemble member numerical id</dd><dt><span>standard_name :</span></dt><dd>realization</dd><dt><span>units :</span></dt><dd>1</dd></dl></div><div class="xr-var-data"><pre>array(0)</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>step</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">timedelta64[ns]</div><div class="xr-var-preview xr-preview">12 days</div><input class="xr-var-attrs-in" id="attrs-f64b72da-4a9d-409c-9f71-b63afbd49d5c" type="checkbox"/><label for="attrs-f64b72da-4a9d-409c-9f71-b63afbd49d5c" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-9d61a9d5-518b-46ef-952f-3f0c9df34abe" type="checkbox"/><label for="data-9d61a9d5-518b-46ef-952f-3f0c9df34abe" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>time since forecast_reference_time</dd><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class="xr-var-data"><pre>array(1036800000000000, dtype='timedelta64[ns]')</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>surface</span></div><div class="xr-var-dims">()</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">0.0</div><input class="xr-var-attrs-in" id="attrs-be093729-118f-47a1-9409-6995b645ff69" type="checkbox"/><label for="attrs-be093729-118f-47a1-9409-6995b645ff69" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-d26ad9f8-eaa2-48ee-b766-013508dbc6b7" type="checkbox"/><label for="data-d26ad9f8-eaa2-48ee-b766-013508dbc6b7" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>long_name :</span></dt><dd>original GRIB coordinate for key: level(surface)</dd><dt><span>units :</span></dt><dd>1</dd></dl></div><div class="xr-var-data"><pre>array(0.)</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">time</span></div><div class="xr-var-dims">(time)</div><div class="xr-var-dtype">datetime64[ns]</div><div class="xr-var-preview xr-preview">1978-12-01 ... 2023-06-01</div><input class="xr-var-attrs-in" disabled="" id="attrs-596dffa0-a7d2-465e-b2c5-b30aa512a3ae" type="checkbox"/><label for="attrs-596dffa0-a7d2-465e-b2c5-b30aa512a3ae" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use xlink:href="#icon-file-text2"></use></svg></label><input class="xr-var-data-in" id="data-0727bce5-09e9-49bf-9073-a17efc6fa34d" type="checkbox"/><label for="data-0727bce5-09e9-49bf-9073-a17efc6fa34d" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array(['1978-12-01T00:00:00.000000000', '1979-03-01T00:00:00.000000000',
        '1979-06-01T00:00:00.000000000', '1979-09-01T00:00:00.000000000',
        '1979-12-01T00:00:00.000000000', '1980-03-01T00:00:00.000000000',
        '1980-06-01T00:00:00.000000000', '1980-09-01T00:00:00.000000000',
@@ -9509,45 +9718,39 @@ Attributes: (12/30)
        '2021-12-01T00:00:00.000000000', '2022-03-01T00:00:00.000000000',
        '2022-06-01T00:00:00.000000000', '2022-09-01T00:00:00.000000000',
        '2022-12-01T00:00:00.000000000', '2023-03-01T00:00:00.000000000',
-       '2023-06-01T00:00:00.000000000'], dtype='datetime64[ns]')</pre></div></li></ul></div></li><li class="xr-section-item"><input class="xr-section-summary-in" id="section-292a1ffe-99c5-47b6-83f6-97c44a48e17b" type="checkbox"/><label class="xr-section-summary" for="section-292a1ffe-99c5-47b6-83f6-97c44a48e17b">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>time</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-820f9fa2-1a97-4f0c-9d16-ec3544395c05" type="checkbox"><label for="index-820f9fa2-1a97-4f0c-9d16-ec3544395c05" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['1978-12-01', '1979-03-01', '1979-06-01', '1979-09-01',
+       '2023-06-01T00:00:00.000000000'], dtype='datetime64[ns]')</pre></div></li></ul></div></li><li class="xr-section-item"><input class="xr-section-summary-in" id="section-139faa1f-9fe4-4778-8267-1aaa0f5c1528" type="checkbox"/><label class="xr-section-summary" for="section-139faa1f-9fe4-4778-8267-1aaa0f5c1528">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>time</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input class="xr-index-data-in" id="index-4d34c1a1-a83c-4532-8838-66118b93d639" type="checkbox"><label for="index-4d34c1a1-a83c-4532-8838-66118b93d639" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use xlink:href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(DatetimeIndex(['1978-12-01', '1979-03-01', '1979-06-01', '1979-09-01',
                '1979-12-01', '1980-03-01', '1980-06-01', '1980-09-01',
                '1980-12-01', '1981-03-01',
                ...
                '2021-03-01', '2021-06-01', '2021-09-01', '2021-12-01',
                '2022-03-01', '2022-06-01', '2022-09-01', '2022-12-01',
                '2023-03-01', '2023-06-01'],
-              dtype='datetime64[ns]', name='time', length=179, freq='QS-DEC'))</pre></div></input></li></ul></div></li><li class="xr-section-item"><input class="xr-section-summary-in" id="section-b3a4c07d-c518-438a-b1d5-ac0c0533c64c" type="checkbox"/><label class="xr-section-summary" for="section-b3a4c07d-c518-438a-b1d5-ac0c0533c64c">Attributes: <span>(30)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>GRIB_NV :</span></dt><dd>0</dd><dt><span>GRIB_Nx :</span></dt><dd>1440</dd><dt><span>GRIB_Ny :</span></dt><dd>721</dd><dt><span>GRIB_cfName :</span></dt><dd>unknown</dd><dt><span>GRIB_cfVarName :</span></dt><dd>t2m</dd><dt><span>GRIB_dataType :</span></dt><dd>an</dd><dt><span>GRIB_gridDefinitionDescription :</span></dt><dd>Latitude/Longitude Grid</dd><dt><span>GRIB_gridType :</span></dt><dd>regular_ll</dd><dt><span>GRIB_iDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_iScansNegatively :</span></dt><dd>0</dd><dt><span>GRIB_jDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_jPointsAreConsecutive :</span></dt><dd>0</dd><dt><span>GRIB_jScansPositively :</span></dt><dd>0</dd><dt><span>GRIB_latitudeOfFirstGridPointInDegrees :</span></dt><dd>90.0</dd><dt><span>GRIB_latitudeOfLastGridPointInDegrees :</span></dt><dd>-90.0</dd><dt><span>GRIB_longitudeOfFirstGridPointInDegrees :</span></dt><dd>0.0</dd><dt><span>GRIB_longitudeOfLastGridPointInDegrees :</span></dt><dd>359.75</dd><dt><span>GRIB_missingValue :</span></dt><dd>3.4028234663852886e+38</dd><dt><span>GRIB_name :</span></dt><dd>2 metre temperature</dd><dt><span>GRIB_numberOfPoints :</span></dt><dd>1038240</dd><dt><span>GRIB_paramId :</span></dt><dd>167</dd><dt><span>GRIB_shortName :</span></dt><dd>2t</dd><dt><span>GRIB_stepType :</span></dt><dd>avgua</dd><dt><span>GRIB_stepUnits :</span></dt><dd>1</dd><dt><span>GRIB_totalNumber :</span></dt><dd>0</dd><dt><span>GRIB_typeOfLevel :</span></dt><dd>surface</dd><dt><span>GRIB_units :</span></dt><dd>K</dd><dt><span>long_name :</span></dt><dd>2 metre temperature</dd><dt><span>standard_name :</span></dt><dd>unknown</dd><dt><span>units :</span></dt><dd>K</dd></dl></div></li></ul></div></div>
+              dtype='datetime64[ns]', name='time', length=179, freq='QS-DEC'))</pre></div></input></li></ul></div></li><li class="xr-section-item"><input class="xr-section-summary-in" id="section-5698bfb8-8f99-47e1-97f8-b797f4aa5076" type="checkbox"/><label class="xr-section-summary" for="section-5698bfb8-8f99-47e1-97f8-b797f4aa5076">Attributes: <span>(30)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>GRIB_NV :</span></dt><dd>0</dd><dt><span>GRIB_Nx :</span></dt><dd>1440</dd><dt><span>GRIB_Ny :</span></dt><dd>721</dd><dt><span>GRIB_cfName :</span></dt><dd>unknown</dd><dt><span>GRIB_cfVarName :</span></dt><dd>t2m</dd><dt><span>GRIB_dataType :</span></dt><dd>an</dd><dt><span>GRIB_gridDefinitionDescription :</span></dt><dd>Latitude/Longitude Grid</dd><dt><span>GRIB_gridType :</span></dt><dd>regular_ll</dd><dt><span>GRIB_iDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_iScansNegatively :</span></dt><dd>0</dd><dt><span>GRIB_jDirectionIncrementInDegrees :</span></dt><dd>0.25</dd><dt><span>GRIB_jPointsAreConsecutive :</span></dt><dd>0</dd><dt><span>GRIB_jScansPositively :</span></dt><dd>0</dd><dt><span>GRIB_latitudeOfFirstGridPointInDegrees :</span></dt><dd>90.0</dd><dt><span>GRIB_latitudeOfLastGridPointInDegrees :</span></dt><dd>-90.0</dd><dt><span>GRIB_longitudeOfFirstGridPointInDegrees :</span></dt><dd>0.0</dd><dt><span>GRIB_longitudeOfLastGridPointInDegrees :</span></dt><dd>359.75</dd><dt><span>GRIB_missingValue :</span></dt><dd>3.4028234663852886e+38</dd><dt><span>GRIB_name :</span></dt><dd>2 metre temperature</dd><dt><span>GRIB_numberOfPoints :</span></dt><dd>1038240</dd><dt><span>GRIB_paramId :</span></dt><dd>167</dd><dt><span>GRIB_shortName :</span></dt><dd>2t</dd><dt><span>GRIB_stepType :</span></dt><dd>avgua</dd><dt><span>GRIB_stepUnits :</span></dt><dd>1</dd><dt><span>GRIB_totalNumber :</span></dt><dd>0</dd><dt><span>GRIB_typeOfLevel :</span></dt><dd>surface</dd><dt><span>GRIB_units :</span></dt><dd>K</dd><dt><span>long_name :</span></dt><dd>2 metre temperature</dd><dt><span>standard_name :</span></dt><dd>unknown</dd><dt><span>units :</span></dt><dd>K</dd></dl></div></li></ul></div></div>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=16d3c7c8-e1e2-4706-8e6a-224e62c57d14">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e8c05c80-0378-42ff-9360-4fd66eef4428">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Next, we select only the winter values:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=16d3c7c8-e1e2-4706-8e6a-224e62c57d14">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
-
-<span class="n">t2m_area_seasonal_spatial_mean</span> <span class="o">=</span> <span class="n">t2m_area_seasonal_spatial_mean</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
-<span class="n">t2m_area_winter_mean</span> <span class="o">=</span> <span class="n">t2m_area_seasonal_spatial_mean</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">t2m_area_seasonal_spatial_mean</span><span class="p">[</span><span class="s2">"time.month"</span><span class="p">]</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="n">SEASON</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">t2m_anomaly_central_europe_winter_spatial_mean</span> <span class="o">=</span> <span class="n">t2m_anomaly_central_europe_seasonal_and_spatial_mean</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">t2m_anomaly_central_europe_seasonal_and_spatial_mean</span><span class="p">[</span><span class="s2">"time.month"</span><span class="p">]</span> <span class="o">==</span> <span class="nb">int</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>CPU times: user 789 ms, sys: 303 ms, total: 1.09 s
-Wall time: 982 ms
-</pre>
 </div>
 </div>
 </div>
@@ -9559,7 +9762,7 @@ Wall time: 982 ms
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Finally, let's plot the results on a time series.</p>
+<p>We can plot the result:</p>
 </div>
 </div>
 </div>
@@ -9568,10 +9771,10 @@ Wall time: 982 ms
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t2m_area_winter_mean</span><span class="p">[</span><span class="s2">"time"</span><span class="p">],</span> <span class="n">t2m_area_winter_mean</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t2m_anomaly_central_europe_winter_spatial_mean</span><span class="p">[</span><span class="s2">"time"</span><span class="p">],</span> <span class="n">t2m_anomaly_central_europe_winter_spatial_mean</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Year"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Surface Temperature anomaly [C]"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Mean Winter surface temperature anomaly in Central Europe"</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
