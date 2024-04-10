@@ -21,16 +21,6 @@
       "dataset": "SSP3-7.0-IFS-NEMO-0001-standard-sfc-v0"
     },
     {
-      "id": "tutorial-destine-extreme-dt-sfc",
-      "title": "How to work with DestinE Extreme DT single levels: forecast temperature in Germany",
-      "description": "This notebook will provide you guidance on how to access and use the 2024-03-08-i7yv-oper-sfc-v0.zarr dataset on Earth Data Hub. This is a sample dataset for the Weather-Induced Extremes Digital Twin. Our first goal is to plot the forcasted 2 metre temperature over central Europe on March 08 2024, specifically the first six forcast steps after the reference forcast datetime 2024-03-08T00:00. After that, we will plot a longer timeseries with all forecast steps for the city of Berlin. ",
-      "source": "./use-cases/tutorial-destine-extreme-dt-sfc.ipynb",
-      "export": "./use-cases/tutorial-destine-extreme-dt-sfc.html",
-      "thumbnail_url": "./use-cases/tutorial-destine-extreme-dt-sfc.png",
-      "collection": "destine-extreme-dt",
-      "dataset": "2024-03-08-i7yv-oper-sfc"
-    },
-    {
       "id": "tutorial-reanalysis-era5-land-floods-precipitation-anomaly",
       "title": "How to work with ERA5 land: Greece 2023 floods due to storm Daniel",
       "description": "This notebook will provide you guidance on how to access and use the reanalysis-era5-land-no-antartica-v0.zarr dataset on Earth Data Hub. The first goal is to compute the total precipitation observed during the Storm Daniel event, from 6 to 7 September 2023, in Greece, and compare it with the average 1991-2020 precipitation in the same area. The second goal is to compare the 2023 cumulative precipitation on a specific location (Greece interland) with the cumulative precipitation of past years (1991-2022) for the same location.",
@@ -49,96 +39,6 @@
       "thumbnail_url": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.jpg",
       "collection": "era5",
       "dataset": "reanalysis-era5-single-levels"
-    },
-    {
-      "id": "tutorial-cmems-reanalysis-cmems_mod_glo_phy_my_0.083_P1D-m",
-      "title": "El Nino events exploration",
-      "description": "An exploration of El Nino events using CMEMS data",
-      "source": "./use-cases/tutorial-cmems-reanalysis-cmems_mod_glo_phy_my_0.083_P1D-m.ipynb",
-      "export": "./use-cases/tutorial-cmems-reanalysis-cmems_mod_glo_phy_my_0.083_P1D-m.html",
-      "thumbnail_url": "./use-cases/tutorial-cmems-reanalysis-cmems_mod_glo_phy_my_0.083_P1D-m.jpg",
-      "collection": "cmems-reanalysis",
-      "dataset": "cmems_mod_glo_phy_my_0.083_P1D-m"
-    },
-    {
-      "id": "tutorial-ecmwf-forecasts-opendata-oper",
-      "title": "Surface temperature forecasts",
-      "description": "An exploration of surface temperature high-resolution forecasts",
-      "source": "./use-cases/tutorial-ecmwf-forecasts-opendata-oper.ipynb",
-      "export": "./use-cases/tutorial-ecmwf-forecasts-opendata-oper.html",
-      "thumbnail_url": "./use-cases/tutorial-ecmwf-forecasts-opendata-oper.jpg",
-      "collection": "ecmwf-forecasts",
-      "dataset": "opendata-oper"
-    },
-    {
-      "id": "tutorial-era5-ecv-for-climate-change",
-      "title": "Surface temperature data exploration",
-      "description": "An exploration of surface temperature variability using ERA5-derived data",
-      "source": "./use-cases/tutorial-era5-ecv-for-climate-change.ipynb",
-      "export": "./use-cases/tutorial-era5-ecv-for-climate-change.html",
-      "thumbnail_url": "./use-cases/tutorial-era5-ecv-for-climate-change.jpg",
-      "collection": "era5",
-      "dataset": "ecv-for-climate-change"
-    },
-    {
-      "id": "eurostats_final-energy-consumption",
-      "title": "EUROSTAT final energy consumption",
-      "description": "EUROSTAT Final Consumption of Energy data over Europe.",
-      "source": "./use-cases/eurostats_final-energy-consumption.ipynb",
-      "export": "./use-cases/eurostats_final-energy-consumption.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/sdg_07_11-20000101-20210101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-final-energy-consumption_sdg_07_11"
-    },
-    {
-      "id": "eurostats_CDD-and-HDD-data",
-      "title": "EUROSTAT CDD & HDD",
-      "description": "Eurostat CDD & HDD data over Europe.",
-      "source": "./use-cases/eurostats_CDD-and-HDD-data.ipynb",
-      "export": "./use-cases/eurostats_CDD-and-HDD-data.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/nrg_chddr2_a-19790101-20220101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-final-energy-consumption_sdg_07_11"
-    },
-    {
-      "id": "eurostats_population",
-      "title": "EUROSTAT population",
-      "description": "Eurostat population data over Europe.",
-      "source": "./use-cases/eurostats_population.ipynb",
-      "export": "./use-cases/eurostats_population.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/demo_r_pjanaggr3-19900101-20220101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-population-demo_r_pjanaggr3"
-    },
-    {
-      "id": "eurostats_population-density",
-      "title": "EUROSTAT population density",
-      "description": "Eurostat population density data over Europe.",
-      "source": "./use-cases/eurostats_population-density.ipynb",
-      "export": "./use-cases/eurostats_population-density.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/demo_r_d3dens-19900101-20220101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-population-density-demo_r_d3dens"
-    },
-    {
-      "id": "eurostats_gross-domestic-product",
-      "title": "EUROSTAT Gross domestic product",
-      "description": "Europe Gross domestic product (GDP).",
-      "source": "./use-cases/eurostats_gross-domestic-product.ipynb",
-      "export": "./use-cases/eurostats_gross-domestic-product.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/nama_10r_3gdp-20000101-20210101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-regional-economic-accounts_nama_10r_3gdp"
-    },
-    {
-      "id": "eurostats_soil-erosion",
-      "title": "EUROSTAT soil erosion",
-      "description": "Europe EUROSTAT soil erosion.",
-      "source": "./use-cases/eurostats_soil-erosion.ipynb",
-      "export": "./use-cases/eurostats_soil-erosion.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/aei_pr_soiler-20000101-20160101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-soil-erosion-aei_pr_soiler"
     }
   ]
 }
