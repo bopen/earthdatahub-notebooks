@@ -31,6 +31,8 @@ def map(data, location=None, vmax=VMAX, vmin=None, projection=PROJECTION, cmap=C
     if extent:
         ax.set_extent(extent)
 
+    return ax
+
 
 def maps(data, vmax=VMAX, projection=PROJECTION, cmap=CMAP, axs_set=[]):
     f, axs = plt.subplots(
