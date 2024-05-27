@@ -8,7 +8,8 @@
       "export": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.html",
       "thumbnail_url": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.png",
       "collection": "destine-climate-dt",
-      "dataset": "SSP3-7.0-IFS-NEMO-0001-high-sfc-v0"
+      "dataset": "SSP3-7.0-IFS-NEMO-0001-high-sfc-v0",
+      "review_state": "draft"
     },
     {
       "id": "tutorial-destine-climate-dt-sfc",
@@ -18,7 +19,8 @@
       "export": "./use-cases/tutorial-destine-climate-dt-sfc.html",
       "thumbnail_url": "./use-cases/tutorial-destine-climate-dt-sfc.png",
       "collection": "destine-climate-dt",
-      "dataset": "SSP3-7.0-IFS-NEMO-0001-standard-sfc-v0"
+      "dataset": "SSP3-7.0-IFS-NEMO-0001-standard-sfc-v0",
+      "review_state": "published"
     },
     {
       "id": "tutorial-reanalysis-era5-land-floods-precipitation-anomaly",
@@ -28,7 +30,8 @@
       "export": "./use-cases/tutorial-reanalysis-era5-land-floods-precipitation-anomaly.html",
       "thumbnail_url": "./use-cases/tutorial-reanalysis-era5-land-floods-precipitation-anomaly.jpg",
       "collection": "era5",
-      "dataset": "reanalysis-era5-land"
+      "dataset": "reanalysis-era5-land",
+      "review_state": "published"
     },
     {
       "id": "tutorial-era5-reanalysis-era5-single-levels",
@@ -38,7 +41,8 @@
       "export": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.html",
       "thumbnail_url": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.jpg",
       "collection": "era5",
-      "dataset": "reanalysis-era5-single-levels"
+      "dataset": "reanalysis-era5-single-levels",
+      "review_state": "published"
     }
   ]
 }
