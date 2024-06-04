@@ -1,164 +1,44 @@
 {
   "entries": [
+        {
+      "id": "tutorial-destine-climate-dt-sfc-high-resolution",
+      "title": "How to work with Climate Adaptation Digital Twin data on Earth Data Hub: fields on a single level or surface, high resolution",
+      "description": "This notebook will provide you guidance on how to access and use the SSP3-7.0-IFS-NEMO-0001-high-sfc-v0.zarr datset on Earth Data Hub. This is a sample dataset for the Destine Climate Adaptation Digital Twin.\n\nOur first goal is to plot the mean 2 metre temperature in January 2025 over Central Europe.\n\nOur second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the 2020-2025 reference period.",
+      "source": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.ipynb",
+      "export": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.html",
+      "thumbnail_url": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.png",
+      "collection": "destine-climate-dt",
+      "dataset": "SSP3-7.0-IFS-NEMO-0001-high-sfc-v0"
+    },
     {
-      "id": "floods-precipitation-anomaly",
-      "title": "How to work with ERA5 land on Earth Data Hub",
-      "description": "This notebook will provide you guidance on how to access and use the `reanalysis-era5-land-no-antartica-v0.zarr` datset on Earth Data Hub. The first goal is to compute the total precipitation observed during the Storm Daniel event, from 6 to 7 September 2023, in Greece, and compare it with the average 1991-2020 precipitation in the same area. The second goal is to compare the 2023 cumulative precipitation on a specific location (Greece interland) with the cumulative precipitation of past years (1991-2022) for the same location.",
-      "source": "./use-cases/floods-precipitation-anomaly.ipynb",
-      "export": "./use-cases/floods-precipitation-anomaly.html",
-      "thumbnail_url": "./use-cases/floods-precipitation-anomaly.jpg",
+      "id": "tutorial-destine-climate-dt-sfc",
+      "title": "How to work with Climate Adaptation Digital Twin data on Earth Data Hub: fields on a single level or surface, standard resolution",
+      "description": "This notebook will provide you guidance on how to access and use the SSP3-7.0-IFS-NEMO-0001-standard-sfc-v0.zarr datset on Earth Data Hub. This is a sample dataset for the Destine Climate Adaptation Digital Twin.\n\nOur first goal is to plot the mean 2 metre temperature in January 2030 over Central Europe.\n\nOur second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the 2020-2028 reference period.",
+      "source": "./use-cases/tutorial-destine-climate-dt-sfc.ipynb",
+      "export": "./use-cases/tutorial-destine-climate-dt-sfc.html",
+      "thumbnail_url": "./use-cases/tutorial-destine-climate-dt-sfc.png",
+      "collection": "destine-climate-dt",
+      "dataset": "SSP3-7.0-IFS-NEMO-0001-standard-sfc-v0"
+    },
+    {
+      "id": "tutorial-reanalysis-era5-land-floods-precipitation-anomaly",
+      "title": "How to work with ERA5 land: Greece 2023 floods due to storm Daniel",
+      "description": "This notebook will provide you guidance on how to access and use the reanalysis-era5-land-no-antartica-v0.zarr dataset on Earth Data Hub. The first goal is to compute the total precipitation observed during the Storm Daniel event, from 6 to 7 September 2023, in Greece, and compare it with the average 1991-2020 precipitation in the same area. The second goal is to compare the 2023 cumulative precipitation on a specific location (Greece interland) with the cumulative precipitation of past years (1991-2022) for the same location.",
+      "source": "./use-cases/tutorial-reanalysis-era5-land-floods-precipitation-anomaly.ipynb",
+      "export": "./use-cases/tutorial-reanalysis-era5-land-floods-precipitation-anomaly.html",
+      "thumbnail_url": "./use-cases/tutorial-reanalysis-era5-land-floods-precipitation-anomaly.jpg",
       "collection": "era5",
       "dataset": "reanalysis-era5-land"
     },
     {
-      "id": "tutorial-cmems-reanalysis-cmems_mod_glo_phy_my_0.083_P1D-m",
-      "title": "El Nino events exploration",
-      "description": "An exploration of El Nino events using CMEMS data",
-      "source": "./use-cases/tutorial-cmems-reanalysis-cmems_mod_glo_phy_my_0.083_P1D-m.ipynb",
-      "export": "./use-cases/tutorial-cmems-reanalysis-cmems_mod_glo_phy_my_0.083_P1D-m.html",
-      "thumbnail_url": "./use-cases/tutorial-cmems-reanalysis-cmems_mod_glo_phy_my_0.083_P1D-m.jpg",
-      "collection": "cmems-reanalysis",
-      "dataset": "cmems_mod_glo_phy_my_0.083_P1D-m"
-    },
-    {
-      "id": "tutorial-ecmwf-forecasts-opendata-oper",
-      "title": "Surface temperature forecasts",
-      "description": "An exploration of surface temperature high-resolution forecasts",
-      "source": "./use-cases/tutorial-ecmwf-forecasts-opendata-oper.ipynb",
-      "export": "./use-cases/tutorial-ecmwf-forecasts-opendata-oper.html",
-      "thumbnail_url": "./use-cases/tutorial-ecmwf-forecasts-opendata-oper.jpg",
-      "collection": "ecmwf-forecasts",
-      "dataset": "opendata-oper"      
-    },
-    {
-      "id": "tutorial-era5-ecv-for-climate-change",
-      "title": "How to work with ERA5 single levels on Earth Data Hub",
-      "description": "An exploration of surface temperature variability using ERA5-derived data",
-      "source": "./use-cases/tutorial-era5-ecv-for-climate-change.ipynb",
-      "export": "./use-cases/tutorial-era5-ecv-for-climate-change.html",
-      "thumbnail_url": "./use-cases/tutorial-era5-ecv-for-climate-change.jpg",
-      "collection": "era5",
-      "dataset": "ecv-for-climate-change"      
-    },
-    {
       "id": "tutorial-era5-reanalysis-era5-single-levels",
-      "title": "Surface temperature data exploration",
-      "description": "This notebook will provide you guidance on how to access and use the reanalysis-era5-single-levels.zarr datset on Earth Data Hub. The first goal is to compute the 2 metre temperature anomaly for the month of October 2023, in the Germany area, against the 1981-2010 reference period. The second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the same reference period and compare it with the monthly averages of 2023.",
+      "title": "How to work with ERA5 single levels: climatological analysis of temperature in Germany",
+      "description": "This notebook will provide you guidance on how to access and use the reanalysis-era5-single-levels.zarr dataset on Earth Data Hub. The first goal is to compute the 2 metre temperature anomaly for the month of October 2023, in the Germany area, against the 1981-2010 reference period. The second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the same reference period and compare it with the monthly averages of 2023.",
       "source": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.ipynb",
       "export": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.html",
       "thumbnail_url": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.jpg",
       "collection": "era5",
-      "dataset": "reanalysis-era5-single-levels"      
-    },
-    {
-      "id": "eurostats_animal-populations",
-      "title": "EUROSTAT animal populations",
-      "description": "Europe EUROSTAT Animal populations by NUTS 2 regions.",
-      "source": "./use-cases/eurostats_animal-populations.ipynb",
-      "export": "./use-cases/eurostats_animal-populations.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/agr_r_animal-19770101-20230101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-animal-populations-agr_r_animal"
-    },
-    {
-      "id": "eurostats_final-energy-consumption",
-      "title": "EUROSTAT final energy consumption",
-      "description": "EUROSTAT Final Consumption of Energy data over Europe.",
-      "source": "./use-cases/eurostats_final-energy-consumption.ipynb",
-      "export": "./use-cases/eurostats_final-energy-consumption.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/sdg_07_11-20000101-20210101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-final-energy-consumption_sdg_07_11"
-    },
-    {
-      "id": "eurostats_CDD-and-HDD-data",
-      "title": "EUROSTAT CDD & HDD",
-      "description": "Eurostat CDD & HDD data over Europe.",
-      "source": "./use-cases/eurostats_CDD-and-HDD-data.ipynb",
-      "export": "./use-cases/eurostats_CDD-and-HDD-data.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/nrg_chddr2_a-19790101-20220101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-final-energy-consumption_sdg_07_11"
-    },
-    {
-      "id": "eurostats_labour-market-employment-rates",
-      "title": "EUROSTAT labour market employment rates",
-      "description": "Eurostat Regional Labour Market Employment Rates.",
-      "source": "./use-cases/eurostats_labour-market-employment-rates.ipynb",
-      "export": "./use-cases/eurostats_labour-market-employment-rates.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/lfst_r_erednu-19950101-20220101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-employment-rates_lfst_r_erednu"
-    },
-    {
-      "id": "eurostats_government-deficit-and-debt",
-      "title": "EUROSTAT Government deficit and debt",
-      "description": "Europe EUROSTAT Government deficit and debt.",
-      "source": "./use-cases/eurostats_government-deficit-and-debt.ipynb",
-      "export": "./use-cases/eurostats_government-deficit-and-debt.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/gov_10dd_edpt1-19950101-20220101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-government-deficit-surplus-gov_10dd_edpt1"
-    },
-    {
-      "id": "eurostats_gerd",
-      "title": "EUROSTAT GERD",
-      "description": "Europe EUROSTAT GERD.",
-      "source": "./use-cases/eurostats_gerd.ipynb",
-      "export": "./use-cases/eurostats_gerd.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/rd_e_gerdreg-19800101-20220101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-gross-domestic-expenditure-R-D-rd_e_gerdreg"
-    },
-    {
-      "id": "eurostats_mortality",
-      "title": "EUROSTAT mortality",
-      "description": "Eurostat mortality data over Europe.",
-      "source": "./use-cases/eurostats_mortality.ipynb",
-      "export": "./use-cases/eurostats_mortality.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/demo_r_mweek3-20000103-20231030.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-mortality-demo_r_mweek3"
-    },
-    {
-      "id": "eurostats_population",
-      "title": "EUROSTAT population",
-      "description": "Eurostat population data over Europe.",
-      "source": "./use-cases/eurostats_population.ipynb",
-      "export": "./use-cases/eurostats_population.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/demo_r_pjanaggr3-19900101-20220101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-population-demo_r_pjanaggr3"
-    },
-    {
-      "id": "eurostats_population-density",
-      "title": "EUROSTAT population density",
-      "description": "Eurostat population density data over Europe.",
-      "source": "./use-cases/eurostats_population-density.ipynb",
-      "export": "./use-cases/eurostats_population-density.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/demo_r_d3dens-19900101-20220101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-population-density-demo_r_d3dens"
-    },
-    {
-      "id": "eurostats_gross-domestic-product",
-      "title": "EUROSTAT Gross domestic product",
-      "description": "Europe Gross domestic product (GDP).",
-      "source": "./use-cases/eurostats_gross-domestic-product.ipynb",
-      "export": "./use-cases/eurostats_gross-domestic-product.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/nama_10r_3gdp-20000101-20210101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-regional-economic-accounts_nama_10r_3gdp"
-    },
-    {
-      "id": "eurostats_soil-erosion",
-      "title": "EUROSTAT soil erosion",
-      "description": "Europe EUROSTAT soil erosion.",
-      "source": "./use-cases/eurostats_soil-erosion.ipynb",
-      "export": "./use-cases/eurostats_soil-erosion.html",
-      "thumbnail_url": "https://apps.mundialis.de/bopen_hedp/thumbnails/aei_pr_soiler-20000101-20160101.png",
-      "collection": "eurostat",
-      "dataset": "geoprocessed-eurostat-soil-erosion-aei_pr_soiler"
+      "dataset": "reanalysis-era5-single-levels"
     }
   ]
 }

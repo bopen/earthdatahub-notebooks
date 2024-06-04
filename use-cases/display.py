@@ -3,18 +3,18 @@ from matplotlib import pyplot as plt
 import xarray as xr
 
 VMAX = 200
-PROJECTION = crs.Miller()
+PROJECTION = crs.EqualEarth()
 CMAP = "Blues"
 
 
 xr.set_options(keep_attrs=True)
 
 
-def map(data, location=None, vmax=VMAX, projection=PROJECTION, cmap=CMAP, ax=None, **kwargs):
+def map(data, location=None, vmax=VMAX, vmin=None, projection=PROJECTION, cmap=CMAP, ax=None, figsize=None, extent=None, **kwargs):
     if ax is None:
-        _, ax = plt.subplots(subplot_kw={"projection": projection})
+        _, ax = plt.subplots(subplot_kw={"projection": projection}, figsize=figsize)
 
-    data.plot(ax=ax, cmap=cmap, vmax=vmax, transform=crs.PlateCarree())
+    data.plot(ax=ax, cmap=cmap, vmax=vmax, vmin=vmin, transform=crs.PlateCarree())
 
     if location is not None:
         ax.plot(
@@ -25,9 +25,13 @@ def map(data, location=None, vmax=VMAX, projection=PROJECTION, cmap=CMAP, ax=Non
             transform=crs.PlateCarree(),
         )
 
-    ax.coastlines()
-    ax.add_feature(feature.BORDERS)
+    ax.coastlines(linewidth=0.5)
+    ax.add_feature(feature.BORDERS, linewidth=0.5, color='dimgrey')
     ax.set(**kwargs)
+    if extent:
+        ax.set_extent(extent)
+
+    return ax
 
 
 def maps(data, vmax=VMAX, projection=PROJECTION, cmap=CMAP, axs_set=[]):
