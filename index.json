@@ -2,13 +2,23 @@
   "entries": [
         {
       "id": "tutorial-destine-climate-dt-sfc-high-resolution",
-      "title": "Climate Adaptation Digital Twin: fields on a single level or surface, high resolution",
+      "title": "Climate Adaptation Digital Twin: high resolution fields on a single level or surface",
       "description": "This notebook will provide you guidance on how to access and use the SSP3-7.0-IFS-NEMO-0001-high-sfc-v0.zarr datset on Earth Data Hub. This is a sample dataset for the Destine Climate Adaptation Digital Twin.\n\nOur first goal is to plot the mean 2 metre temperature in January 2025 over Central Europe.\n\nOur second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the 2020-2025 reference period.",
       "source": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.ipynb",
       "export": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.html",
       "thumbnail_url": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.png",
       "collection": "destine-climate-dt",
       "dataset": "0001-high-sfc"
+    },
+    {
+      "id": "tutorial-destine-climate-dt-sfc",
+      "title": "Climate Adaptation Digital Twin: standard resolution fields on a single level or surface",
+      "description": "This notebook will provide you guidance on how to access and use the SSP3-7.0-IFS-NEMO-0001-standard-sfc-v0.zarr datset on Earth Data Hub. This is a sample dataset for the Destine Climate Adaptation Digital Twin.\n\nOur first goal is to plot the mean 2 metre temperature in January 2030 over Central Europe.\n\nOur second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the 2020-2028 reference period.",
+      "source": "./use-cases/tutorial-destine-climate-dt-sfc.ipynb",
+      "export": "./use-cases/tutorial-destine-climate-dt-sfc.html",
+      "thumbnail_url": "./use-cases/tutorial-destine-climate-dt-sfc.png",
+      "collection": "destine-climate-dt",
+      "dataset": "0001-standard-sfc"
     },
     {
       "id": "tutorial-reanalysis-era5-land-floods-precipitation-anomaly",
