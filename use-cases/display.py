@@ -15,18 +15,18 @@ def map(data, location=None, vmax=VMAX, vmin=None, projection=PROJECTION, cmap=C
         _, ax = plt.subplots(subplot_kw={"projection": projection}, figsize=figsize)
 
     data.plot(ax=ax, cmap=cmap, vmax=vmax, vmin=vmin, transform=crs.PlateCarree())
-
+    
     if location is not None:
         ax.plot(
             location["longitude"],
             location["latitude"],
             "+",
-            color="red",
+            edgecolor="red",
             transform=crs.PlateCarree(),
         )
 
     ax.coastlines(linewidth=0.5)
-    ax.add_feature(feature.BORDERS, linewidth=0.5, color='dimgrey')
+    ax.add_feature(feature.BORDERS, linewidth=0.5, edgecolor='dimgrey')
     ax.set(**kwargs)
     if extent:
         ax.set_extent(extent)
