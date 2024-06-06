@@ -7,7 +7,7 @@
       "source": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.ipynb",
       "export": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.html",
       "thumbnail_url": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.png",
-      "collection": "destine-climate-dt",
+      "collection": "d1-climate-dt-ScenarioMIP-SSP3-7.0-IFS-NEMO",
       "dataset": "0001-high-sfc"
     },
     {
@@ -17,7 +17,7 @@
       "source": "./use-cases/tutorial-destine-climate-dt-sfc.ipynb",
       "export": "./use-cases/tutorial-destine-climate-dt-sfc.html",
       "thumbnail_url": "./use-cases/tutorial-destine-climate-dt-sfc.png",
-      "collection": "destine-climate-dt",
+      "collection": "d1-climate-dt-ScenarioMIP-SSP3-7.0-IFS-NEMO",
       "dataset": "0001-standard-sfc"
     },
     {
