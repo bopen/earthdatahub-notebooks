@@ -6,8 +6,8 @@
       "description": "This notebook will provide you guidance on how to access and use the SSP3-7.0-IFS-NEMO-0001-high-sfc-v0.zarr datset on Earth Data Hub. This is a sample dataset for the Destine Climate Adaptation Digital Twin.\n\nOur first goal is to plot the mean 2 metre temperature in January 2025 over Central Europe.\n\nOur second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the 2020-2025 reference period.",
       "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-climate-dt-single-levels-high-resolution-climatological-analysis-of-temperature-in-germany.ipynb",
       "try_on_insula": true,
-      "export": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.html",
-      "thumbnail_url": "./use-cases/tutorial-destine-climate-dt-sfc-high-resolution.png",
+      "export": "./use-cases/tutorial-climate-dt-single-levels-high-resolution-climatological-analysis-of-temperature-in-germany.html",
+      "thumbnail_url": "./use-cases/tutorial-climate-dt-single-levels-high-resolution-climatological-analysis-of-temperature-in-germany.png",
       "collection": "d1-climate-dt-ScenarioMIP-SSP3-7.0-IFS-NEMO",
       "dataset": "0001-high-sfc"
     },
@@ -17,8 +17,8 @@
       "description": "This notebook will provide you guidance on how to access and use the SSP3-7.0-IFS-NEMO-0001-standard-sfc-v0.zarr datset on Earth Data Hub. This is a sample dataset for the Destine Climate Adaptation Digital Twin.\n\nOur first goal is to plot the mean 2 metre temperature in January 2030 over Central Europe.\n\nOur second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the 2020-2028 reference period.",
       "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-climate-dt-single-levels-standard-resolution-climatological-analysis-of-temperature-in-germany.ipynb",
       "try_on_insula": true,
-      "export": "./use-cases/tutorial-destine-climate-dt-sfc.html",
-      "thumbnail_url": "./use-cases/tutorial-destine-climate-dt-sfc.png",
+      "export": "./use-cases/tutorial-climate-dt-single-levels-standard-resolution-climatological-analysis-of-temperature-in-germany.html",
+      "thumbnail_url": "./use-cases/tutorial-climate-dt-single-levels-standard-resolution-climatological-analysis-of-temperature-in-germany.png",
       "collection": "d1-climate-dt-ScenarioMIP-SSP3-7.0-IFS-NEMO",
       "dataset": "0001-standard-sfc"
     },
@@ -28,8 +28,8 @@
       "description": "This notebook will provide you guidance on how to access and use the reanalysis-era5-land-no-antartica-v0.zarr dataset on Earth Data Hub. The first goal is to compute the total precipitation observed during the Storm Daniel event, from 6 to 7 September 2023, in Greece, and compare it with the average 1991-2020 precipitation in the same area. The second goal is to compare the 2023 cumulative precipitation on a specific location (Greece interland) with the cumulative precipitation of past years (1991-2022) for the same location.",
       "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-era5-land-floods-precipitation-anomaly-in-greece.ipynb",
       "try_on_insula": true,
-      "export": "./use-cases/tutorial-reanalysis-era5-land-floods-precipitation-anomaly.html",
-      "thumbnail_url": "./use-cases/tutorial-reanalysis-era5-land-floods-precipitation-anomaly.jpg",
+      "export": "./use-cases/tutorial-era5-land-floods-precipitation-anomaly-in-greece.html",
+      "thumbnail_url": "./use-cases/tutorial-era5-land-floods-precipitation-anomaly-in-greece.jpg",
       "collection": "era5",
       "dataset": "reanalysis-era5-land"
     },
@@ -39,8 +39,8 @@
       "description": "This notebook will provide you guidance on how to access and use the reanalysis-era5-single-levels.zarr dataset on Earth Data Hub. The first goal is to compute the 2 metre temperature anomaly for the month of October 2023, in the Germany area, against the 1981-2010 reference period. The second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the same reference period and compare it with the monthly averages of 2023.",
       "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-era5-single-levels-climatological-analysis-of-temperature-in-germany.ipynb",
       "try_on_insula": true,
-      "export": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.html",
-      "thumbnail_url": "./use-cases/tutorial-era5-reanalysis-era5-single-levels.jpg",
+      "export": "./use-cases/tutorial-era5-single-levels-climatological-analysis-of-temperature-in-germany.html",
+      "thumbnail_url": "./use-cases/tutorial-era5-single-levels-climatological-analysis-of-temperature-in-germany.jpg",
       "collection": "era5",
       "dataset": "reanalysis-era5-single-levels"
     }
