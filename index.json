@@ -78,7 +78,7 @@
     },
     {
       "id": "tutorial-climate-dt-single-levels-heating-degree-days",
-      "title": "Heating degree days according to Climate Adaptation Digital Twin",
+      "title": "Climate Adaptation Digital Twin: heating degree days",
       "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-climate-dt-single-levels-heating-degree-days.ipynb",
       "try_on_insula": true,
       "export": "./use-cases/tutorial-climate-dt-single-levels-heating-degree-days.html",
