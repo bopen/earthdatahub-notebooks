@@ -75,6 +75,14 @@
       "try_on_insula": true,
       "export": "./use-cases/tutorial-population-weighted-temperature.html",
       "thumbnail_url": "./use-cases/tutorial-population-weighted-temperature.jpg"
+    },
+    {
+      "id": "tutorial-climate-dt-single-levels-heating-degree-days",
+      "title": "Heating degree days according to Climate Adaptation Digital Twin",
+      "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-climate-dt-single-levels-heating-degree-days.ipynb",
+      "try_on_insula": true,
+      "export": "./use-cases/tutorial-climate-dt-single-levels-heating-degree-days.html",
+      "thumbnail_url": "./use-cases/tutorial-climate-dt-single-levels-heating-degree-days.png"
     }
   ]
 }
