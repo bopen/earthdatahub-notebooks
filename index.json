@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "id": "tutorial-ecv-for-climate-change-global-temperature-change",
+      "title": "How to work with the Essential Climate Variables on Earth Data Hub",
+      "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-ecv-for-climate-change-global-temperature-change.ipynb",
+      "try_on_insula": true,
+      "export": "./use-cases/tutorial-ecv-for-climate-change-global-temperature-change.html",
+      "thumbnail_url": "./use-cases/tutorial-ecv-for-climate-change-global-temperature-change.jpg"
+    },
+    {
       "id": "tutorial-era5-land-floods-precipitation-anomaly-in-greece",
       "title": "ERA5 land: storm Daniel flood, Greece 2023",
       "description": "This notebook will provide you guidance on how to access and use the reanalysis-era5-land-no-antartica-v0.zarr dataset on Earth Data Hub. The first goal is to compute the total precipitation observed during the Storm Daniel event, from 6 to 7 September 2023, in Greece, and compare it with the average 1991-2020 precipitation in the same area. The second goal is to compare the 2023 cumulative precipitation on a specific location (Greece interland) with the cumulative precipitation of past years (1991-2022) for the same location.",
@@ -29,14 +37,6 @@
       "try_on_insula": true,
       "export": "./use-cases/tutorial-copernicus-dem-europe.html",
       "thumbnail_url": "./use-cases/tutorial-copernicus-dem-europe.jpg"
-    },
-    {
-      "id": "tutorial-ecv-for-climate-change-global-temperature-change",
-      "title": "How to work with the Essential Climate Variables on Earth Data Hub",
-      "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-ecv-for-climate-change-global-temperature-change.ipynb",
-      "try_on_insula": true,
-      "export": "./use-cases/tutorial-ecv-for-climate-change-global-temperature-change.html",
-      "thumbnail_url": "./use-cases/tutorial-ecv-for-climate-change-global-temperature-change.jpg"
     },
     {
       "id": "tutorial-hybrid-world-population",
