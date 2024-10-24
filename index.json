@@ -72,17 +72,6 @@
       "thumbnail_url": "./use-cases/tutorial-climate-dt-single-levels-high-resolution-climatological-analysis-of-temperature-in-germany.png",
       "collection": "d1-climate-dt-ScenarioMIP-SSP3-7.0-IFS-NEMO",
       "dataset": "0001-high-sfc"
-    },
-    {
-      "id": "tutorial-climate-dt-single-levels-standard-resolution-climatological-analysis-of-temperature-in-germany",
-      "title": "Climate Adaptation Digital Twin: standard resolution fields on a single level or surface",
-      "description": "This notebook will provide you guidance on how to access and use the SSP3-7.0-IFS-NEMO-0001-standard-sfc-v0.zarr datset on Earth Data Hub. This is a sample dataset for the Destine Climate Adaptation Digital Twin.\n\nOur first goal is to plot the mean 2 metre temperature in January 2030 over Central Europe.\n\nOur second goal is to compute the 2 metre temperature climatology (monthly means and standard deviations) in Berlin for the 2020-2028 reference period.",
-      "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-climate-dt-single-levels-standard-resolution-climatological-analysis-of-temperature-in-germany.ipynb",
-      "try_on_insula": true,
-      "export": "./use-cases/tutorial-climate-dt-single-levels-standard-resolution-climatological-analysis-of-temperature-in-germany.html",
-      "thumbnail_url": "./use-cases/tutorial-climate-dt-single-levels-standard-resolution-climatological-analysis-of-temperature-in-germany.png",
-      "collection": "d1-climate-dt-ScenarioMIP-SSP3-7.0-IFS-NEMO",
-      "dataset": "0001-standard-sfc"
     }
   ]
 }
