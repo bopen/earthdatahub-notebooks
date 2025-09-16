@@ -12,7 +12,7 @@ usecases = [
     {
         "name": "final energy consumption",
         "title": "EUROSTAT Final Consumption of Energy data over Europe",
-        "metadata_link": "https://earthdatahub.com/collections/eurostat/datasets/geoprocessed-eurostat-final-energy-consumption_sdg_07_11",
+        "metadata_link": "https://earthdatahub.destine.eu/collections/eurostat/datasets/geoprocessed-eurostat-final-energy-consumption_sdg_07_11",
         "eurostat_link": "https://ec.europa.eu/eurostat/cache/metadata/en/sdg_07_11_esmsip2.htm",
         "dataset_zarr": "sdg_07_11-20000101-20210101.zarr",
         "dataset_var": "L0_TOE_HAB",

@@ -26,7 +26,7 @@ usecases = [
     {
         "name": "final energy consumption",
         "title": "EUROSTAT Final Consumption of Energy data over Europe",
-        "metadata_link": "https://earthdatahub.com/collections/eurostat/datasets/geoprocessed-eurostat-final-energy-consumption_sdg_07_11",
+        "metadata_link": "https://earthdatahub.destine.eu/collections/eurostat/datasets/geoprocessed-eurostat-final-energy-consumption_sdg_07_11",
         "eurostat_link": "https://ec.europa.eu/eurostat/cache/metadata/en/sdg_07_11_esmsip2.htm",
         "dataset_zarr": "sdg_07_11-20000101-20210101.zarr",
         "dataset_var": "L0_TOE_HAB",
@@ -35,7 +35,7 @@ usecases = [
     {
         "name": "soil erosion",
         "title": "Europe EUROSTAT soil erosion",
-        "metadata_link": "https://earthdatahub.com/collections/eurostat/datasets/geoprocessed-eurostat-soil-erosion-aei_pr_soiler",
+        "metadata_link": "https://earthdatahub.destine.eu/collections/eurostat/datasets/geoprocessed-eurostat-soil-erosion-aei_pr_soiler",
         "eurostat_link": "https://ec.europa.eu/eurostat/cache/metadata/en/aei_pr_soiler_esms.htm",
         "dataset_zarr": "aei_pr_soiler-20000101-20160101.zarr",
         "dataset_var": "L3_TOTAL_CLC2_321_T",
@@ -44,7 +44,7 @@ usecases = [
     {
         "name": "population density",
         "title": "Eurostat population density data over Europe",
-        "metadata_link": "https://earthdatahub.com/collections/eurostat/datasets/geoprocessed-eurostat-population-density-demo_r_d3dens",
+        "metadata_link": "https://earthdatahub.destine.eu/collections/eurostat/datasets/geoprocessed-eurostat-population-density-demo_r_d3dens",
         "eurostat_link": "https://ec.europa.eu/eurostat/cache/metadata/en/demo_pop_esms.htm",
         "dataset_zarr": "demo_r_d3dens-19900101-20220101.zarr",
         "dataset_var": "L3_PER_KM2",
@@ -53,7 +53,7 @@ usecases = [
     {
         "name": "animal populations",
         "title": "Europe EUROSTAT Animal populations by NUTS 2 regions",
-        "metadata_link": "https://earthdatahub.com/collections/eurostat/datasets/geoprocessed-eurostat-animal-populations-agr_r_animal",
+        "metadata_link": "https://earthdatahub.destine.eu/collections/eurostat/datasets/geoprocessed-eurostat-animal-populations-agr_r_animal",
         "eurostat_link": "https://ec.europa.eu/eurostat/cache/metadata/en/apro_anip_esms.htm",
         "dataset_zarr": "agr_r_animal-19770101-20230101.zarr",
         "dataset_var": "L2_A2000_THS_HD",
@@ -62,7 +62,7 @@ usecases = [
     {
         "name": "mortality",
         "title": "Eurostat mortality data over Europe",
-        "metadata_link": "https://earthdatahub.com/collections/eurostat/datasets/geoprocessed-eurostat-mortality-demo_r_mweek3",
+        "metadata_link": "https://earthdatahub.destine.eu/collections/eurostat/datasets/geoprocessed-eurostat-mortality-demo_r_mweek3",
         "eurostat_link": "https://ec.europa.eu/eurostat/cache/metadata/en/demomwk_esms.htm",
         "dataset_zarr": "demo_r_mweek3-20000103-20231030.zarr",
         "dataset_var": "L3_NR_T_Y65_69",
@@ -71,7 +71,7 @@ usecases = [
     {
         "name": "population",
         "title": "Eurostat population data over Europe",
-        "metadata_link": "https://earthdatahub.com/collections/eurostat/datasets/geoprocessed-eurostat-population-demo_r_pjanaggr3",
+        "metadata_link": "https://earthdatahub.destine.eu/collections/eurostat/datasets/geoprocessed-eurostat-population-demo_r_pjanaggr3",
         "eurostat_link": "https://ec.europa.eu/eurostat/cache/metadata/en/demo_r_gind3_esms.htm",
         "dataset_zarr": "demo_r_pjanaggr3-19900101-20220101.zarr",
         "dataset_var": "L3_NR_T_Y_LT15",
@@ -80,7 +80,7 @@ usecases = [
     {
         "name": "government deficit and debt",
         "title": "Europe EUROSTAT Government deficit and debt",
-        "metadata_link": "https://earthdatahub.com/collections/eurostat/datasets/geoprocessed-eurostat-government-deficit-surplus-gov_10dd_edpt1",
+        "metadata_link": "https://earthdatahub.destine.eu/collections/eurostat/datasets/geoprocessed-eurostat-government-deficit-surplus-gov_10dd_edpt1",
         "eurostat_link": "https://ec.europa.eu/eurostat/cache/metadata/en/gov_10dd_esms.htm",
         "dataset_zarr": "gov_10dd_edpt1-19950101-20220101.zarr",
         "dataset_var": "L0_MIO_EUR_S13_B9",
@@ -89,7 +89,7 @@ usecases = [
     {
         "name": "labour market employment rates",
         "title": "Eurostat Regional Labour Market Employment Rates",
-        "metadata_link": "https://earthdatahub.com/collections/eurostat/datasets/geoprocessed-eurostat-employment-rates_lfst_r_erednu",
+        "metadata_link": "https://earthdatahub.destine.eu/collections/eurostat/datasets/geoprocessed-eurostat-employment-rates_lfst_r_erednu",
         "eurostat_link": "https://ec.europa.eu/eurostat/cache/metadata/en/reg_lmk_esms.htm",
         "dataset_zarr": "lfst_r_erednu-19950101-20220101.zarr",
         "dataset_var": "L0_TOTAL_TOTAL_TOTAL_Y15_64_T_PC",
@@ -98,7 +98,7 @@ usecases = [
     {
         "name": "gross domestic product",
         "title": "Europe Gross domestic product (GDP)",
-        "metadata_link": "https://earthdatahub.com/collections/eurostat/datasets/geoprocessed-eurostat-regional-economic-accounts_nama_10r_3gdp",
+        "metadata_link": "https://earthdatahub.destine.eu/collections/eurostat/datasets/geoprocessed-eurostat-regional-economic-accounts_nama_10r_3gdp",
         "eurostat_link": "https://ec.europa.eu/eurostat/cache/metadata/en/reg_eco10_esms.htm",
         "dataset_zarr": "nama_10r_3gdp-20000101-20210101.zarr",
         "dataset_var": "L3_MIO_EUR",
@@ -107,7 +107,7 @@ usecases = [
     {
         "name": "gerd",
         "title": "Europe EUROSTAT GERD",
-        "metadata_link": "https://earthdatahub.com/collections/eurostat/datasets/geoprocessed-eurostat-gross-domestic-expenditure-R-D-rd_e_gerdreg",
+        "metadata_link": "https://earthdatahub.destine.eu/collections/eurostat/datasets/geoprocessed-eurostat-gross-domestic-expenditure-R-D-rd_e_gerdreg",
         "eurostat_link": "https://ec.europa.eu/eurostat/cache/metadata/en/rd_esms.htm",
         "dataset_zarr": "rd_e_gerdreg-19800101-20220101.zarr",
         "dataset_var": "L2_GOV_EUR_HAB",
@@ -116,7 +116,7 @@ usecases = [
     {
         "name": "CDD and HDD data",
         "title": "Eurostat CDD & HDD data over Europe",
-        "metadata_link": "https://earthdatahub.com/collections/eurostat/datasets/geoprocessed-eurostat-cooling-heating-degree-days-nrg_chddr2_a",
+        "metadata_link": "https://earthdatahub.destine.eu/collections/eurostat/datasets/geoprocessed-eurostat-cooling-heating-degree-days-nrg_chddr2_a",
         "eurostat_link": "https://ec.europa.eu/eurostat/cache/metadata/en/nrg_chdd_esms.htm",
         "dataset_zarr": "nrg_chddr2_a-19790101-20220101.zarr",
         "dataset_var": ["L3_NR_CDD", "L3_NR_HDD"],
