@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "id": "tutorial-climate-dt-heating-degree-days-in-darmstadt",
+      "title": "Climate Adaptation Digital Twin: heating degree days",
+      "description": "This notebook will provide you guidance on how to access and use Climate Adaptation Digital Twin (Climate DT) datasets on Earth Data Hub (EDH). It performs a heating degree days analysis in Darmstadt.",
+      "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-climate-dt-heating-degree-days-in-darmstadt.ipynb",
+      "try_on_insula": true,
+      "export": "./use-cases/tutorial-climate-dt-heating-degree-days-in-darmstadt.html",
+      "thumbnail_url": "./use-cases/tutorial-climate-dt-heating-degree-days-in-darmstadt.png",
+      "collection": "climate-dt-2",
+      "dataset": "IFS-NEMO-SSP3-7.0-sfc-hourly-standard"
+    },
+    {
+      "id": "tutorial-climate-dt-climatological-analysis-of-temperature-in-germany",
+      "title": "Climate Adaptation Digital Twin: climatological analysis of temperature in Germany",
+      "description": "This notebook will provide you guidance on how to access and use Climate Adaptation Digital Twin (Climate DT) datasets on Earth Data Hub (EDH). It performs a climatological analysis of temperature in Germany.",
+      "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-climate-dt-climatological-analysis-of-temperature-in-germany.ipynb",
+      "try_on_insula": true,
+      "export": "./use-cases/tutorial-climate-dt-climatological-analysis-of-temperature-in-germany.html",
+      "thumbnail_url": "./use-cases/tutorial-climate-dt-climatological-analysis-of-temperature-in-germany.png",
+      "collection": "climate-dt-2",
+      "dataset": "IFS-NEMO-SSP3-7.0-sfc-hourly-standard"
+    },
+    {
       "id": "tutorial-ecv-for-climate-change-global-temperature-change",
       "title": "How to work with the Essential Climate Variables on Earth Data Hub",
       "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-ecv-for-climate-change-global-temperature-change.ipynb",
@@ -53,28 +75,6 @@
       "try_on_insula": true,
       "export": "./use-cases/tutorial-population-weighted-temperature.html",
       "thumbnail_url": "./use-cases/tutorial-population-weighted-temperature.jpg"
-    },
-    {
-      "id": "tutorial-climate-dt-heating-degree-days-in-darmstadt",
-      "title": "Climate Adaptation Digital Twin: heating degree days",
-      "description": "This notebook will provide you guidance on how to access and use Climate Adaptation Digital Twin (Climate DT) datasets on Earth Data Hub (EDH). It performs a heating degree days analysis in Darmstadt.",
-      "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-climate-dt-heating-degree-days-in-darmstadt.ipynb",
-      "try_on_insula": true,
-      "export": "./use-cases/tutorial-climate-dt-heating-degree-days-in-darmstadt.html",
-      "thumbnail_url": "./use-cases/tutorial-climate-dt-heating-degree-days-in-darmstadt.png",
-      "collection": "climate-dt-2",
-      "dataset": "IFS-NEMO-SSP3-7.0-sfc-hourly-standard"
-    },
-    {
-      "id": "tutorial-climate-dt-climatological-analysis-of-temperature-in-germany",
-      "title": "Climate Adaptation Digital Twin: climatological analysis of temperature in Germany",
-      "description": "This notebook will provide you guidance on how to access and use Climate Adaptation Digital Twin (Climate DT) datasets on Earth Data Hub (EDH). It performs a climatological analysis of temperature in Germany.",
-      "source": "https://github.com/SercoSPA/DESP-UserWorkflowService-Templates/blob/main/EarthDataHub/tutorial-climate-dt-climatological-analysis-of-temperature-in-germany.ipynb",
-      "try_on_insula": true,
-      "export": "./use-cases/tutorial-climate-dt-climatological-analysis-of-temperature-in-germany.html",
-      "thumbnail_url": "./use-cases/tutorial-climate-dt-climatological-analysis-of-temperature-in-germany.png",
-      "collection": "climate-dt-2",
-      "dataset": "IFS-NEMO-SSP3-7.0-sfc-hourly-standard"
     }
   ]
 }
